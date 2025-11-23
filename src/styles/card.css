@@ -1,0 +1,182 @@
+/* Contenedor de la card */
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    padding: 2rem;
+}
+
+/* Card - SE ADAPTA AL CONTENEDOR */
+.feature-card {
+    max-width: 19.4rem; /* 310px */
+    width: 100%;
+    padding: 1.6rem;    /* 26px */
+    text-align: center;
+
+    background: rgba(0, 0, 50, 0.32);
+    border-radius: 1rem;
+    backdrop-filter: blur(0.44rem);
+
+    border: 1px solid rgba(0, 217, 255, 0.17);
+    box-shadow: 0 0 1.12rem rgba(0, 217, 255, 0.12);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Distribuir contenido verticalmente */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.feature-card:hover {
+    transform: translateY(-0.37rem);
+    box-shadow: 0 0 1.56rem rgba(0, 217, 255, 0.28);
+}
+
+/* ICON CONTAINER */
+.icon-container {
+    width: 4.25rem;  /* 68px */
+    height: 4.25rem;
+    border-radius: 50%;
+
+    background: rgba(0, 217, 255, 0.12);
+    border: 1px solid rgba(0, 217, 255, 0.35);
+    backdrop-filter: blur(0.37rem);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto;
+    color: #ffffff;
+    flex-shrink: 0;
+}
+
+/* ICON (SVG HUD STYLE) */
+.hud-icon.pulse {
+    animation: pulseHUD 3.6s ease-in-out infinite;
+}
+
+@keyframes pulseHUD {
+    0%, 100% { transform: scale(1); opacity: 0.9; }
+    50% { transform: scale(1.08); opacity: 1; }
+}
+
+.hud-icon.slow-rotate {
+    animation: spinHUD 12s linear infinite;
+}
+
+@keyframes spinHUD {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.hud-icon {
+    width: 1.62rem; /* 26px */
+    height: 1.62rem;
+
+    stroke: currentColor;
+    fill: none;
+
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    opacity: 0.92;
+
+    transition: transform 0.4s ease, opacity 0.3s ease;
+    transform-origin: center;
+}
+
+/* Rotación lenta (gear) */
+.icon-container.gear {
+    animation: spinHUD 12s linear infinite;
+}
+
+/* TITULO */
+.card-title {
+    font-size: 1.5rem; /* 24px */
+    font-weight: 700;
+    letter-spacing: 0.031rem;
+
+    color: #ffffff;
+    margin: 0;
+
+    text-shadow: 
+        0 0 0.81rem rgba(0, 217, 255, 0.35),
+        0 0 1.25rem rgba(180, 150, 255, 0.2);
+    
+    flex-shrink: 0;
+}
+
+/* DESCRIPCIÓN */
+.feature-card p {
+    font-size: 0.94rem; /* 15px */
+    line-height: 1.6;
+    color: rgba(234, 252, 255, 0.88);
+
+    background: rgba(0, 0, 50, 0.22);
+    padding: 0.9rem 1rem;
+    border-radius: 0.75rem;
+
+    backdrop-filter: blur(0.31rem);
+    box-shadow: 
+        0 0 0.5rem rgba(0, 217, 255, 0.12),
+        0 0 0.75rem rgba(180, 150, 255, 0.05);
+
+    margin: 0;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* LINK */
+.learn-more {
+    display: inline-block;
+    font-weight: 600;
+    color: #00d9ff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.learn-more:hover {
+    color: #ffffff;
+    text-shadow: 0 0 12px rgba(0, 217, 255, 0.38), 0 0 18px rgba(180, 150, 255, 0.25);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .card-container {
+        padding: 1.5rem;
+    }
+
+    .card-title {
+        font-size: 1.3rem;
+    }
+
+    .feature-card p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-container {
+        padding: 1rem;
+    }
+
+    .feature-card {
+        padding: 1.2rem;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    .feature-card p {
+        font-size: 0.85rem;
+    }
+}

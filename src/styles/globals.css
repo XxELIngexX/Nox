@@ -1,0 +1,90 @@
+:root {
+
+  /* PRIMARIOS */
+  --color-primary: #356BFA;
+  --color-primary-light: #5E89FF;
+  --color-primary-dark: #1E47B5;
+
+  /* SECUNDARIOS */
+  --color-secondary: #7A5CFF;
+  --color-accent: #45E6B8;
+
+  /* NEUTROS */
+  --color-bg-primary: #F8FAFC;
+  --color-bg-secondary: #1E1E25;
+  --color-text-primary: #1E1E25;
+  --color-text-secondary: #CBD5E1;
+
+  /* INTERACCIÓN */
+  --color-success: #30D97F;
+  --color-warning: #F8C146;
+  --color-error: #FF4F5E;
+  --color-info: #40A0FF;
+
+  /* GRADIENTES */
+  --gradient-primary: linear-gradient(135deg, #356BFA, #7A5CFF);
+  --gradient-secondary: linear-gradient(135deg, #45E6B8, #356BFA);
+  --gradient-overlay: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.55) 100%);
+
+  /* SOMBRAS */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.18);
+
+
+  --header-padding: 1.2rem 5%;
+  --header-padding-mobile: 0.8rem 4%;
+  --header-gap-logo: 1rem;
+  --header-gap-nav: 2rem;
+
+  --header-logo-size: 50px;
+  --header-logo-size-tablet: 45px;
+  --header-logo-size-mobile: 35px;
+
+  --header-name-size: 1.5rem;
+  --header-name-size-tablet: 1.3rem;
+  --header-name-size-mobile: 1rem;
+
+  --sidebar-width: 280px;
+  --sidebar-max-width: 80%;
+  --sidebar-width-mobile: 70%;
+  --sidebar-padding: 1.5rem;
+  --sidebar-gap: 2rem;
+
+  --z-header: 1000;
+  --z-sidebar: 999;
+  --z-backdrop: 998;
+
+  --header-height: 100px;
+  --header-height-mobile: 100px;
+
+  --hero-padding: 5rem;
+  --hero-profile-size: 180px;
+  --hero-profile-size-mobile: 120px;
+
+  --hero-name-size: 3rem;
+  --hero-name-size-mobile: 2rem;
+  --hero-subtitle-size: 1.5rem;
+  --hero-subtitle-size-mobile: 1.2rem;
+
+  --hero-button-padding: 0.8rem 1.5rem;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: "Inter", "Space Grotesk", "Manrope", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  min-height: 100vh;
+}
+
+/* DARK MODE */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--color-bg-secondary);
+    color: var(--color-bg-primary);
+  }
+}

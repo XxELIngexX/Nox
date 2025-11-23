@@ -1,0 +1,190 @@
+.hero {
+    min-height: calc(100vh - var(--header-height));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding: 2rem 10rem 0rem 10rem;
+
+    /* Fondo ahora más azul, con un matiz púrpura leve pero no dominante */
+    background: radial-gradient(
+            circle at center,
+            rgba(0, 80, 160, 0.25),
+            rgba(0, 0, 0, 0.88)
+        ),
+        url('../assets/logoWithName.png') center/22rem no-repeat;
+
+    position: relative;
+    margin-top: 3rem;
+}
+
+
+/* --------- CONTENEDOR PRINCIPAL --------- */
+
+.hero_content {
+    display: flex;
+    flex-direction: row-reverse;
+
+    width: 100%;
+    padding-bottom: 0;
+    height: 13rem;
+
+    /* Más azul translúcido, con sutil tinte púrpura pero muuuy leve */
+    background: rgba(0, 90, 180, 0.08);
+    backdrop-filter: blur(6px);
+
+    filter: drop-shadow(0 0 14px rgba(120, 70, 220, 0.25));
+}
+
+.hero_text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    background: rgba(0, 90, 180, 0.08);
+    backdrop-filter: blur(6px);
+}
+
+
+/* --------- BOTONES --------- */
+
+.hero_buttons-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: end;
+    max-width: 5rem;
+}
+
+.social-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    /* Azul oscuro suave */
+    background: rgba(0, 30, 80, 0.18);
+    backdrop-filter: blur(7px);
+
+    /* Borde ahora púrpura-azulado */
+    border: 2px solid #7b5cffbe;
+    color: #9d84ff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.3s ease;
+}
+
+.social-button:hover {
+    /* Glow más frío (azul) con toque morado */
+    box-shadow:
+        0 0 12px #8d6fff,
+        0 0 22px #3aaaff;
+    transform: scale(1.12);
+}
+
+
+/* --------- TEXTO --------- */
+
+.hero_name {
+    font-size: var(--hero-name-size);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+
+    color: #ebf2ff;
+
+    text-shadow:
+        0 0 14px rgba(100, 70, 200, 0.45),
+        0 0 25px rgba(0, 140, 255, 0.28);
+}
+
+.hero_dynamic-title {
+    font-size: var(--hero-subtitle-size);
+    color: #cfe7ff;
+    opacity: 0.9;
+}
+
+
+/* --------- DESCRIPCIÓN --------- */
+
+.hero_description {
+    font-size: 0.95rem;
+    color: rgba(230, 240, 255, 0.92);
+    text-align: center;
+    align-content: center;
+
+    height: 30%;
+    max-width: 50rem;
+    margin: 3rem 3rem 0 3rem;
+
+    padding: 0.6rem 1rem;
+    border-radius: 10px;
+
+    /* Azul con un suspiro de púrpura */
+    background: rgba(0, 40, 110, 0.22);
+    backdrop-filter: blur(5px);
+
+    box-shadow:
+        0 0 10px rgba(110, 75, 255, 0.18),
+        0 0 18px rgba(0, 150, 255, 0.13);
+}
+
+
+/* --------- LINKS --------- */
+
+.hero a {
+    display: inline-block;
+    margin: 0.5rem;
+    padding: var(--hero-button-padding);
+    border-radius: 8px;
+
+    color: #a88cff;
+    text-decoration: none;
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+.hero a:hover {
+    transform: scale(1.05);
+    filter: brightness(1.18);
+
+    /* Glow morado-azulado */
+    text-shadow: 0 0 12px rgba(120, 80, 255, 0.5);
+}
+
+
+/* --------- RESPONSIVE --------- */
+
+@media (max-width: 800px) {
+
+    .hero {
+        min-height: calc(100vh - var(--header-height-mobile));
+        padding: 1rem;
+        background-size: 17rem;
+    }
+
+    .hero_content {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        height: auto;
+        gap: 2rem;
+    }
+
+    .hero_buttons-container {
+        flex-direction: row;
+        margin-top: 1rem;
+        justify-content: center;
+    }
+
+    .hero_description {
+        font-size: 0.78rem;
+        max-width: 90%;
+        margin-top: 1.5rem;
+        padding: 0.7rem 1rem;
+    }
+}

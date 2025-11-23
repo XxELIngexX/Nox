@@ -1,0 +1,80 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.split {
+  /* display: flex; */
+
+  background: rgba(26, 37, 71, 0.55);
+  backdrop-filter: blur(12px);
+
+  display: flex;
+  justify-content: center;
+  gap: 45px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 25px rgba(0, 217, 255, 0.14);
+
+  height: 25rem;
+
+
+}
+
+#portafolio {
+  max-height: 8rem;
+  display: flex;
+  align-items: center;
+  background: rgb(52, 55, 120);
+}
+
+
+
+h1 {
+  font-size: 3rem;
+  padding: 10px;
+
+  line-height: 1.6;
+  color: rgba(234, 252, 255, 0.88);
+  padding: 0.9rem 1rem;
+  border-radius: 0.75rem;
+  
+  backdrop-filter: blur(0.31rem);
+
+  }
