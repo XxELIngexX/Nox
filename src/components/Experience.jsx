@@ -1,24 +1,27 @@
 import React from 'react';
+import educationImg from '../assets/education.jpg';
+import workImg from '../assets/work.jpg';
+
 import '../styles/experience.css';
 
 const Experience = () => {
     return (
         <section id="experience" className="experience-continer">
             <h1 className="experience-title">Experience</h1>
-            
+
             <p className="experience-description">De la vida universitaria a la gestión operativa. Conoce mi cronología de experiencia, enfocada en habilidades de liderazgo, comunicación y tecnología.</p>
 
             {/* IMAGEN 1: La que se coloca en la esquina superior izquierda */}
-            <img    
-                className="experience-image image-education" 
-                src="https://cdn-icons-png.flaticon.com/512/201/201818.png" 
-                alt="Professional Portfolio Image 1" 
-            /> 
+            {/* <img
+                className="experience-image image-education"
+                src={educationImg}
+                alt="Education"
+            /> */}
 
             {/* EDUCACIÓN: Se coloca a la derecha de la Imagen 1 */}
             <div className="education-list">
                 <h3>Education</h3>
-                
+
                 <div className="education-item">
                     <h2 className="education-item-date">2020 - 2025</h2>
                     <p className="education-item-description">Universidad Escuela Colombiana de ingenieria Julio Garavito</p>
@@ -74,12 +77,12 @@ const Experience = () => {
                     </div>
                 </div>
             </div>
-            
-            <img 
-                className="experience-image image-work" 
-                src="https://cdn-icons-png.flaticon.com/512/201/201818.png" 
-                alt="Professional Portfolio Image 2" 
-            />
+
+            {/* <img
+                className="experience-image image-work"
+                src={workImg}
+                alt="Professional"
+            /> */}
 
         </section>
     );

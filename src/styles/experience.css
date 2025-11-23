@@ -57,9 +57,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 140px;
-    opacity: 0.5;
-    margin: 0 auto 2rem;
+    max-width: 95%;
+    opacity: 0.6;
+    margin: 2rem auto 2rem;
 }
 
 /* Imagen arriba-columna izquierda */
