@@ -17,8 +17,11 @@ function App() {
   return (
     <>
       <Header />
+
       <Hero />
+
       <AboutMe />
+
       <div className='split'>
         <Card
           tittle="skills"
@@ -40,7 +43,10 @@ function App() {
           to="projects"
         />
       </div>
+
       <Skills />
+
+       <h3>Languages</h3>
       <div id='lengugaes' className='split'>
         <Card 
           tittle="Spanish"
@@ -56,12 +62,7 @@ function App() {
 
       </div>
       <Experience />
-
-      <div id='portafolio' className='split'>
-        <h1>Portafolio</h1>
-      </div>
-      
-        
+  
       <Projects />
       <Contact />
       {/*<Footer />

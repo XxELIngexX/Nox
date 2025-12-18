@@ -1,0 +1,332 @@
+/* ===== PROJECTS SECTION ===== */
+.projects-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== HEADER - Tonalidades Oscuras ===== */
+.projects__header {
+    background: linear-gradient(135deg, var(--color-bg-secondary) 0%, #0a0f2e 50%, var(--color-bg-secondary) 100%);
+    padding: 6rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Fondo decorativo animado */
+.projects__header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, var(--color-primary) 0%, transparent 70%);
+    opacity: 0.08;
+    animation: floatHeaderBg 25s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.projects__header::after {
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, var(--color-secondary) 0%, transparent 70%);
+    opacity: 0.08;
+    animation: floatHeaderBg2 30s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes floatHeaderBg {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(80px, 80px); }
+}
+
+@keyframes floatHeaderBg2 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-80px, -80px); }
+}
+
+/* ===== TÍTULO ===== */
+.projects__title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.projects__title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    margin: 1.5rem auto 0;
+    border-radius: 2px;
+}
+
+/* ===== SUBTÍTULO ===== */
+.projects__subtitle {
+    font-size: 1.2rem;
+    color: rgba(240, 244, 255, 0.8);
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
+
+/* ===== CONTENIDO - Tonalidades Claras ===== */
+.projects__content {
+    background: var(--color-bg-primary);
+    padding: 6rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* ===== CLASS SECTION (ACCORDION) ===== */
+.class-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== CLASS HEADER (ACCORDION BUTTON) ===== */
+.class-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    gap: 2rem;
+}
+
+.class-header:hover {
+    box-shadow: 0 8px 24px rgba(53, 107, 250, 0.3);
+    transform: translateY(-2px);
+}
+
+.class-header__info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: left;
+    flex: 1;
+}
+
+.class-header__title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.class-header__name {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0;
+    font-weight: 600;
+}
+
+.class-header__description {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ===== CHEVRON ICON ===== */
+.class-header__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: #FFFFFF;
+    transition: all 0.4s ease;
+    flex-shrink: 0;
+}
+
+.class-header__icon.active {
+    transform: rotate(180deg) scale(1.1);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* ===== CLASS PROJECTS GRID ===== */
+.class-projects {
+    background: var(--color-bg-primary);
+    padding: 3rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        max-height: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        max-height: 2000px;
+        transform: translateY(0);
+    }
+}
+
+/* ===== RESPONSIVIDAD ===== */
+@media (max-width: 1024px) {
+    .projects__header {
+        padding: 4rem 2rem;
+    }
+
+    .projects__title {
+        font-size: 2.8rem;
+    }
+
+    .projects__content {
+        padding: 4rem 2rem;
+        gap: 2.5rem;
+    }
+
+    .class-header {
+        padding: 1.5rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .class-header__info {
+        text-align: center;
+    }
+
+    .class-header__title {
+        font-size: 1.5rem;
+    }
+
+    .class-header__name {
+        font-size: 1rem;
+    }
+
+    .class-header__description {
+        font-size: 0.9rem;
+    }
+
+    .class-projects {
+        padding: 2.5rem 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects__header {
+        padding: 3rem 1.5rem;
+    }
+
+    .projects__title {
+        font-size: 2.2rem;
+    }
+
+    .projects__subtitle {
+        font-size: 1rem;
+    }
+
+    .projects__content {
+        padding: 3rem 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .class-header {
+        padding: 1.25rem;
+        gap: 0.75rem;
+    }
+
+    .class-header__title {
+        font-size: 1.3rem;
+    }
+
+    .class-header__name {
+        font-size: 0.95rem;
+    }
+
+    .class-header__description {
+        font-size: 0.85rem;
+    }
+
+    .class-header__icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .class-projects {
+        padding: 2rem 1rem;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects__header {
+        padding: 2rem 1rem;
+    }
+
+    .projects__title {
+        font-size: 1.8rem;
+    }
+
+    .projects__subtitle {
+        font-size: 0.95rem;
+    }
+
+    .projects__content {
+        padding: 2rem 1rem;
+        gap: 1rem;
+    }
+
+    .class-header {
+        padding: 1rem;
+    }
+
+    .class-header__title {
+        font-size: 1.1rem;
+    }
+
+    .class-header__name {
+        font-size: 0.9rem;
+    }
+
+    .class-header__description {
+        font-size: 0.8rem;
+    }
+
+    .class-header__icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .class-projects {
+        padding: 1.5rem 1rem;
+        gap: 1rem;
+    }
+}

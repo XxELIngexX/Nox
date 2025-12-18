@@ -7,7 +7,7 @@ export const Hero = () => {
         <section className="hero">
                 <div className="hero_text">
                     <h1 className="hero_name">Cesar Amaya Gomez</h1>
-                    <h3 className="hero_dynamic-title">Web Developer | UI/UX Designer | Freelancer</h3>
+                    <h3 className="hero_dynamic-title"> Full-Stack Developer | Security-Oriented Thinker</h3>
                 </div>
             <div className="hero_content">
                 <div className="hero_buttons-container">
@@ -17,7 +17,7 @@ export const Hero = () => {
                     <a href="https://www.linkedin.com/in/cesar-amaya-gomez/" className="social-button" id="hero_linkedin-button">
                         <FaLinkedin size={24} />
                     </a>
-                    <a href="/resume.pdf" className="social-button" id="hero_resume-button">
+                    <a href="/cv.pdf" className="social-button" id="hero_resume-button" target="_blank" rel="noopener noreferrer">
                         <HiOutlineDocumentDownload size={24} />
                     </a>
                 </div>

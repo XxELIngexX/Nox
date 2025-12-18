@@ -1,3 +1,9 @@
+/* ================================================================
+   ABOUT ME - CONTENEDOR CLARO CON CONTRASTE
+   Fondo: Blanco puro
+   Acentos: Paleta primaria (azul, púrpura, acento)
+================================================================ */
+
 .aboutMe {
     padding: var(--hero-padding);
     display: flex;
@@ -5,19 +11,33 @@
     max-width: 85%;
     margin: 0 auto;
 
-    /* Fondo blanco tipo editorial, pero suavizado */
-    background: #ffffff;
+    /* FONDO: Blanco puro - MÁXIMO CONTRASTE contra el dark theme */
+    background: #FFFFFF;
     border-radius: 14px;
 
-    /* Sombra suave pero con un tono un poquito más oscuro
-       para que conecte con el tema dark del sitio */
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+    /* SOMBRA: Profunda pero elegante, respeta la paleta */
+    box-shadow: 
+        0 8px 32px rgba(53, 107, 250, 0.15),
+        0 4px 16px rgba(0, 0, 0, 0.1);
 
-    /* Borde sutil para integrarlo con el resto de la estética */
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* BORDE: Línea sutil en primario para conectar con la paleta */
+    border: 1px solid rgba(53, 107, 250, 0.2);
+    
+    transition: all 0.4s ease;
 }
 
-/* ----------- TEXTO ----------- */
+/* Hover: más presencia visual */
+.aboutMe:hover {
+    box-shadow: 
+        0 12px 48px rgba(53, 107, 250, 0.2),
+        0 6px 20px rgba(0, 0, 0, 0.12);
+    border-color: rgba(53, 107, 250, 0.3);
+    transform: translateY(-4px);
+}
+
+/* ================================================================
+   TEXTO
+================================================================ */
 .text {
     flex: 3;
     display: flex;
@@ -29,54 +49,112 @@
     font-size: 2.7rem;
     font-weight: 800;
     line-height: 1.2;
-    color: var(--dark-bg); /* texto fuerte para que conecte con los tonos */
+
+    /* TÍTULO: Degradado primario → secundario (identidad visual) */
+    background: linear-gradient(
+        135deg,
+        #356BFA 0%,      /* Primario azul */
+        #7A5CFF 100%     /* Secundario púrpura */
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    transition: all 0.3s ease;
+}
+
+.text h1:hover {
+    filter: brightness(1.15);
 }
 
 .text p {
     max-width: 50rem;
-    color: #2b2b2b; 
+    
+    /* PÁRRAFOS: Negro suave para máxima legibilidad en fondo blanco */
+    color: #3A3A3A;
     font-size: 1rem;
-    line-height: 1.65;
+    line-height: 1.8;
+    font-weight: 400;
 
-    /* Fondo totalmente limpio */
     background: transparent;
     padding: 0;
+
+    transition: color 0.3s ease;
 }
 
-/* ----------- FOTO Y DATOS ----------- */
+.text p:hover {
+    color: #356BFA;
+}
+
+/* ================================================================
+   FOTO Y DATOS
+================================================================ */
 .photo {
     flex: 1;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .photo h3 {
     font-size: 1.3rem;
     font-weight: 700;
-    color: var(--dark-bg);
+
+    /* Usa el primario */
+    color: #356BFA;
     margin-bottom: 0.2rem;
+
+    transition: color 0.3s ease;
+}
+
+.photo h3:hover {
+    color: #7A5CFF;
 }
 
 .photo p {
-    color: var(--accent-color); 
+    /* Gris medio oscuro */
+    color: #666666;
     font-weight: 600;
-    margin-bottom: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
 }
 
-/* Imagen circular elegante */
+/* ================================================================
+   IMAGEN CIRCULAR CON BORDE GRADIENTE
+================================================================ */
 .hero_profile-pic {
     width: 230px;
     height: 230px;
     object-fit: cover;
     border-radius: 50%;
 
-    /* Sombra sutil, estética editorial */
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+    /* BORDE GRADIENTE: Utiliza primario + acento */
+    border: 4px solid transparent;
+    background: linear-gradient(#FFFFFF, #FFFFFF) padding-box,
+                linear-gradient(135deg, #356BFA, #45E6B8) border-box;
 
-    /* Borde ultra sutil para integrarlo con el blanco */
-    border: 2px solid rgba(0,0,0,0.03);
+    /* SOMBRA: Tonalidad azul para presencia */
+    box-shadow: 
+        0 8px 32px rgba(53, 107, 250, 0.2),
+        0 4px 16px rgba(0, 0, 0, 0.1);
+
+    transition: all 0.4s ease;
 }
 
-/* ----------- RESPONSIVE ----------- */
+.hero_profile-pic:hover {
+    transform: scale(1.06);
+    box-shadow: 
+        0 12px 48px rgba(53, 107, 250, 0.3),
+        0 6px 24px rgba(122, 92, 255, 0.2);
+}
+
+/* ================================================================
+   RESPONSIVE
+================================================================ */
 @media (max-width: 900px) {
     .aboutMe {
         flex-direction: column;
@@ -86,7 +164,62 @@
         padding: 3rem 2rem;
     }
 
+    .text h1 {
+        font-size: 2rem;
+    }
+
+    .photo {
+        order: -1;
+        margin-bottom: 1rem;
+    }
+
     .hero_profile-pic {
         margin: 0 auto;
+        width: 180px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 600px) {
+    .aboutMe {
+        padding: 2rem 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .text h1 {
+        font-size: 1.5rem;
+    }
+
+    .text p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .photo h3 {
+        font-size: 1.1rem;
+    }
+
+    .hero_profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* ================================================================
+   ACCESIBILIDAD
+================================================================ */
+@media (prefers-reduced-motion: reduce) {
+    .aboutMe,
+    .text h1,
+    .hero_profile-pic {
+        transition: none;
+    }
+
+    .aboutMe:hover {
+        transform: none;
+    }
+
+    .hero_profile-pic:hover {
+        transform: none;
     }
 }
