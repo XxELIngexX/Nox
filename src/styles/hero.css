@@ -27,9 +27,10 @@
     position: absolute;
     inset: 0;
     
-    background: url('../assets/photo2.jpeg') center center / cover no-repeat;
+    /* Contain = Imagen completa visible, sin cortar */
+    background: url('../assets/photo2.jpeg') center center / contain no-repeat;
     
-    filter: blur(2px);
+    filter: blur(2.4px);
     z-index: 0;
 }
 
@@ -220,8 +221,12 @@
     .hero {
         min-height: calc(100vh - var(--header-height-mobile));
         padding: var(--spacing-md);
-        background-size: 17rem;
         margin-top: var(--spacing-lg);
+    }
+    
+    /* Imagen más grande en móvil */
+    .hero::before {
+        background-size: 85%;
     }
 
     .hero_content {
@@ -266,8 +271,9 @@
         margin-top: var(--spacing-md);
     }
 
+    /* Imagen aún más grande en móvil pequeño */
     .hero::before {
-        background-size: 15rem;
+        background-size: 90%;
     }
 
     .hero_name {
@@ -301,6 +307,11 @@
     .hero {
         padding: var(--spacing-xs);
         margin-top: var(--spacing-sm);
+    }
+    
+    /* Imagen al 95% en móviles muy pequeños */
+    .hero::before {
+        background-size: 95%;
     }
 
     .hero_content {
