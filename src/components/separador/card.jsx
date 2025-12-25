@@ -60,7 +60,8 @@ export const Card = ({ tittle, description, linkActive, to }) => {
                 <h3 className="card-title">{tittle}</h3>
                 <p className="">{description}</p>
                 {linkActive && <Link
-                    to="skills"
+                
+                    to= {to}
                     smooth={true}
                     duration={500}
                     className="learn-more"

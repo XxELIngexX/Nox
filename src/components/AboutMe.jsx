@@ -1,4 +1,4 @@
-import backgroun from "../assets/photo.jpg"
+import backgroun from "../assets/photo.jpeg"
 import "../styles/aboutMe.css"
 
 export const aboutMe = () => {

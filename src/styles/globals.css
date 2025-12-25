@@ -1,73 +1,334 @@
-:root {
+/* ============================================================
+   GLOBALS.CSS - SISTEMA DE DISEÑO COMPLETO
+   ============================================================ */
 
+:root {
+  /* ============================================================
+     COLORES BASE
+     ============================================================ */
+  
   /* PRIMARIOS */
   --color-primary: #356BFA;
   --color-primary-light: #5E89FF;
   --color-primary-dark: #1E47B5;
+  --color-primary-alpha-10: rgba(53, 107, 250, 0.1);
+  --color-primary-alpha-20: rgba(53, 107, 250, 0.2);
+  --color-primary-alpha-30: rgba(53, 107, 250, 0.3);
 
   /* SECUNDARIOS */
   --color-secondary: #7A5CFF;
+  --color-secondary-light: #9D84FF;
+  --color-secondary-dark: #5B3ACC;
+  --color-secondary-alpha-10: rgba(122, 92, 255, 0.1);
+  --color-secondary-alpha-20: rgba(122, 92, 255, 0.2);
+
+  /* ACENTO */
   --color-accent: #45E6B8;
+  --color-accent-light: #6EEDCA;
+  --color-accent-dark: #2EC99A;
+  --color-accent-alpha-10: rgba(69, 230, 184, 0.1);
+  --color-accent-alpha-20: rgba(69, 230, 184, 0.2);
 
-  /* NEUTROS */
-  --color-bg-primary: #F8FAFC;
-  --color-bg-secondary: #1E1E25;
-  --color-text-primary: #1E1E25;
-  --color-text-secondary: #CBD5E1;
+  /* ============================================================
+     FONDOS Y SUPERFICIES
+     ============================================================ */
+  
+  /* Fondos principales */
+  --color-bg-primary: #F8FAFC;        /* Fondo claro general */
+  --color-bg-secondary: #1E1E25;      /* Fondo oscuro */
+  --color-bg-tertiary: #FFFFFF;       /* Fondo blanco puro */
+  
+  /* Fondos con transparencia */
+  --color-bg-glass-light: rgba(248, 250, 252, 0.85);
+  --color-bg-glass-dark: rgba(30, 30, 37, 0.85);
+  
+  /* Superficies (cards, containers) */
+  --color-surface-light: #FFFFFF;
+  --color-surface-dark: rgba(0, 0, 50, 0.32);
+  --color-surface-elevated: rgba(255, 255, 255, 0.95);
 
-  /* INTERACCIÓN */
+  /* ============================================================
+     TEXTOS Y CONTENIDO
+     ============================================================ */
+  
+  --color-text-primary: #1E1E25;      /* Texto principal oscuro */
+  --color-text-secondary: #64748B;    /* Texto secundario */
+  --color-text-tertiary: #94A3B8;     /* Texto terciario/placeholder */
+  --color-text-inverse: #FFFFFF;      /* Texto sobre fondos oscuros */
+  --color-text-muted: #CBD5E1;        /* Texto deshabilitado */
+  
+  /* Texto sobre fondos específicos */
+  --color-text-on-primary: #FFFFFF;
+  --color-text-on-secondary: #FFFFFF;
+  --color-text-on-dark: #F8FAFC;
+
+  /* ============================================================
+     BORDES Y DIVISORES
+     ============================================================ */
+  
+  --color-border-light: #E2E8F0;
+  --color-border-medium: #CBD5E1;
+  --color-border-dark: #94A3B8;
+  --color-border-primary: rgba(53, 107, 250, 0.2);
+  --color-border-secondary: rgba(122, 92, 255, 0.2);
+
+  /* ============================================================
+     ESTADOS INTERACTIVOS
+     ============================================================ */
+  
   --color-success: #30D97F;
+  --color-success-light: #4AE692;
+  --color-success-dark: #22B566;
+  
   --color-warning: #F8C146;
+  --color-warning-light: #FACF6D;
+  --color-warning-dark: #D6A32E;
+  
   --color-error: #FF4F5E;
+  --color-error-light: #FF7380;
+  --color-error-dark: #E63947;
+  
   --color-info: #40A0FF;
+  --color-info-light: #66B3FF;
+  --color-info-dark: #2A8BE6;
 
-  /* GRADIENTES */
-  --gradient-primary: linear-gradient(135deg, #356BFA, #7A5CFF);
-  --gradient-secondary: linear-gradient(135deg, #45E6B8, #356BFA);
-  --gradient-overlay: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.55) 100%);
+  /* ============================================================
+     GRADIENTES
+     ============================================================ */
+  
+  --gradient-primary: linear-gradient(135deg, #356BFA 0%, #7A5CFF 100%);
+  --gradient-secondary: linear-gradient(135deg, #45E6B8 0%, #356BFA 100%);
+  --gradient-tertiary: linear-gradient(135deg, #7A5CFF 0%, #45E6B8 100%);
+  --gradient-overlay-dark: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+  --gradient-overlay-light: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 100%);
+  --gradient-radial-primary: radial-gradient(circle, var(--color-primary) 0%, transparent 70%);
+  --gradient-radial-secondary: radial-gradient(circle, var(--color-secondary) 0%, transparent 70%);
 
-  /* SOMBRAS */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.08);
+  /* ============================================================
+     SOMBRAS
+     ============================================================ */
+  
+  /* Sombras estándar */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.18);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 12px 32px rgba(0, 0, 0, 0.18);
+  --shadow-2xl: 0 24px 48px rgba(0, 0, 0, 0.22);
+  
+  /* Sombras de color */
+  --shadow-primary: 0 8px 24px rgba(53, 107, 250, 0.25);
+  --shadow-secondary: 0 8px 24px rgba(122, 92, 255, 0.25);
+  --shadow-accent: 0 8px 24px rgba(69, 230, 184, 0.25);
+  
+  /* Glow effects */
+  --glow-primary: 0 0 20px rgba(53, 107, 250, 0.3);
+  --glow-secondary: 0 0 20px rgba(122, 92, 255, 0.3);
+  --glow-accent: 0 0 20px rgba(69, 230, 184, 0.3);
 
+  /* ============================================================
+     ESPACIADO Y DIMENSIONES
+     ============================================================ */
+  
+  /* Espaciado base (usar con múltiplos) */
+  --spacing-unit: 0.25rem;  /* 4px */
+  --spacing-xs: 0.5rem;     /* 8px */
+  --spacing-sm: 0.75rem;    /* 12px */
+  --spacing-md: 1rem;       /* 16px */
+  --spacing-lg: 1.5rem;     /* 24px */
+  --spacing-xl: 2rem;       /* 32px */
+  --spacing-2xl: 3rem;      /* 48px */
+  --spacing-3xl: 4rem;      /* 64px */
+  --spacing-4xl: 6rem;      /* 96px */
 
-  --header-padding: 1.2rem 5%;
-  --header-padding-mobile: 0.8rem 4%;
-  --header-gap-logo: 1rem;
-  --header-gap-nav: 2rem;
+  /* Radios de borde */
+  --radius-sm: 0.375rem;    /* 6px */
+  --radius-md: 0.5rem;      /* 8px */
+  --radius-lg: 0.75rem;     /* 12px */
+  --radius-xl: 1rem;        /* 16px */
+  --radius-2xl: 1.5rem;     /* 24px */
+  --radius-full: 9999px;    /* Círculo completo */
 
+  /* Anchos máximos de contenedor */
+  --container-xs: 480px;
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1400px;
+
+  /* ============================================================
+     TIPOGRAFÍA
+     ============================================================ */
+  
+  /* Familias de fuente */
+  --font-family-base: "Inter", "Space Grotesk", "Manrope", sans-serif;
+  --font-family-heading: "Inter", "Space Grotesk", sans-serif;
+  --font-family-mono: "Fira Code", "Consolas", monospace;
+
+  /* Tamaños de fuente */
+  --font-size-xs: 0.75rem;      /* 12px */
+  --font-size-sm: 0.875rem;     /* 14px */
+  --font-size-base: 1rem;       /* 16px */
+  --font-size-lg: 1.125rem;     /* 18px */
+  --font-size-xl: 1.25rem;      /* 20px */
+  --font-size-2xl: 1.5rem;      /* 24px */
+  --font-size-3xl: 1.875rem;    /* 30px */
+  --font-size-4xl: 2.25rem;     /* 36px */
+  --font-size-5xl: 3rem;        /* 48px */
+  --font-size-6xl: 3.75rem;     /* 60px */
+
+  /* Pesos de fuente */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* Alturas de línea */
+  --line-height-tight: 1.2;
+  --line-height-snug: 1.4;
+  --line-height-normal: 1.6;
+  --line-height-relaxed: 1.8;
+  --line-height-loose: 2;
+
+  /* Letter spacing */
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
+  --letter-spacing-widest: 0.1em;
+
+  /* ============================================================
+     COMPONENTES - HEADER
+     ============================================================ */
+  
+  --header-height: 80px;
+  --header-height-mobile: 70px;
+  --header-padding: 1rem 5%;
+  --header-padding-mobile: 0.75rem 4%;
+  --header-bg: rgba(255, 255, 255, 0.85);
+  --header-bg-scrolled: rgba(248, 250, 252, 0.95);
+  --header-border: rgba(0, 0, 0, 0.06);
+  
   --header-logo-size: 50px;
   --header-logo-size-tablet: 45px;
-  --header-logo-size-mobile: 35px;
+  --header-logo-size-mobile: 40px;
+  
+  --header-text-size: 1rem;
+  --header-text-size-mobile: 0.9rem;
 
-  --header-name-size: 1.5rem;
-  --header-name-size-tablet: 1.3rem;
-  --header-name-size-mobile: 1rem;
-
+  /* ============================================================
+     COMPONENTES - SIDEBAR
+     ============================================================ */
+  
   --sidebar-width: 280px;
-  --sidebar-max-width: 80%;
-  --sidebar-width-mobile: 70%;
+  --sidebar-width-mobile: 85%;
+  --sidebar-max-width: 320px;
   --sidebar-padding: 1.5rem;
-  --sidebar-gap: 2rem;
+  --sidebar-gap: 1rem;
+  --sidebar-bg: rgba(248, 250, 252, 0.98);
 
-  --z-header: 1000;
-  --z-sidebar: 999;
-  --z-backdrop: 998;
-
-  --header-height: 100px;
-  --header-height-mobile: 100px;
-
-  --hero-padding: 5rem;
-  --hero-profile-size: 180px;
-  --hero-profile-size-mobile: 120px;
-
-  --hero-name-size: 3rem;
-  --hero-name-size-mobile: 2rem;
+  /* ============================================================
+     COMPONENTES - HERO
+     ============================================================ */
+  
+  --hero-padding: 4rem;
+  --hero-padding-mobile: 2rem;
+  --hero-min-height: calc(100vh - var(--header-height));
+  
+  --hero-profile-size: 230px;
+  --hero-profile-size-mobile: 150px;
+  
+  --hero-title-size: 3rem;
+  --hero-title-size-mobile: 2rem;
   --hero-subtitle-size: 1.5rem;
   --hero-subtitle-size-mobile: 1.2rem;
 
-  --hero-button-padding: 0.8rem 1.5rem;
+  /* ============================================================
+     COMPONENTES - CARDS
+     ============================================================ */
+  
+  --card-padding: 1.5rem;
+  --card-padding-mobile: 1rem;
+  --card-radius: var(--radius-xl);
+  --card-bg: var(--color-surface-light);
+  --card-border: var(--color-border-light);
+  --card-shadow: var(--shadow-md);
+  --card-shadow-hover: var(--shadow-lg);
+
+  /* ============================================================
+     COMPONENTES - BUTTONS
+     ============================================================ */
+  
+  --button-padding: 0.75rem 1.5rem;
+  --button-padding-sm: 0.5rem 1rem;
+  --button-padding-lg: 1rem 2rem;
+  --button-radius: var(--radius-lg);
+  --button-font-weight: var(--font-weight-semibold);
+
+  /* ============================================================
+     COMPONENTES - INPUTS
+     ============================================================ */
+  
+  --input-padding: 0.875rem 1.25rem;
+  --input-radius: var(--radius-md);
+  --input-border: 2px solid var(--color-border-light);
+  --input-border-focus: 2px solid var(--color-primary);
+  --input-bg: var(--color-surface-light);
+  --input-shadow-focus: 0 0 0 3px rgba(53, 107, 250, 0.1);
+
+  /* ============================================================
+     Z-INDEX HIERARCHY
+     ============================================================ */
+  
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-overlay: 400;
+  --z-modal-backdrop: 500;
+  --z-modal: 600;
+  --z-popover: 700;
+  --z-tooltip: 800;
+  --z-notification: 900;
+  --z-header: 1000;
+
+  /* ============================================================
+     TRANSICIONES Y ANIMACIONES
+     ============================================================ */
+  
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  --transition-slower: 0.8s ease;
+  
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* ============================================================
+     BACKDROP FILTERS
+     ============================================================ */
+  
+  --blur-sm: blur(4px);
+  --blur-md: blur(8px);
+  --blur-lg: blur(12px);
+  --blur-xl: blur(16px);
+}
+
+/* ============================================================
+   ESTILOS BASE
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -75,16 +336,93 @@ body {
   padding: 0;
   background: var(--color-bg-primary);
   color: var(--color-text-primary);
-  font-family: "Inter", "Space Grotesk", "Manrope", sans-serif;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
-/* DARK MODE */
+/* ============================================================
+   MODO OSCURO (Opcional - actualmente tu diseño es claro)
+   ============================================================ */
+
 @media (prefers-color-scheme: dark) {
-  body {
-    background: var(--color-bg-secondary);
-    color: var(--color-bg-primary);
+  :root {
+    /* Si decides implementar dark mode, puedes sobrescribir variables aquí */
   }
+}
+
+/* ============================================================
+   REDUCED MOTION (Accesibilidad)
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================================
+   UTILIDADES DE ACCESIBILIDAD
+   ============================================================ */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.focus-visible:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   SCROLLBAR PERSONALIZADO
+   ============================================================ */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-medium);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* ============================================================
+   SELECCIÓN DE TEXTO
+   ============================================================ */
+
+::selection {
+  background: var(--color-primary-alpha-20);
+  color: var(--color-text-primary);
+}
+
+::-moz-selection {
+  background: var(--color-primary-alpha-20);
+  color: var(--color-text-primary);
 }

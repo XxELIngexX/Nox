@@ -1,3 +1,8 @@
+/* ================================================================
+   HERO SECTION - OPTIMIZADO Y COMPACTO
+   Espaciado reducido para evitar desperdicio de espacio vertical
+================================================================ */
+
 .hero {
     min-height: calc(100vh - var(--header-height));
     display: flex;
@@ -6,205 +11,339 @@
     align-items: center;
     text-align: center;
 
-    padding: 2rem 10rem 0rem 10rem;
+    /* REDUCIDO: Padding más compacto */
+    padding: var(--spacing-xl) 5rem 0 5rem;
 
     position: relative;
-    margin-top: 3rem;
+    margin-top: var(--spacing-2xl);
     overflow: hidden;
 }
 
+/* ================================================================
+   FONDOS Y OVERLAYS
+================================================================ */
 .hero::before {
     content: "";
     position: absolute;
     inset: 0;
-
-    background: url('../assets/logoWithName.png') center/22rem no-repeat;
-    filter: blur(6px);
-
+    
+    background: url('../assets/photo2.jpeg') center center / cover no-repeat;
+    
+    filter: blur(2px);
     z-index: 0;
 }
+
 .hero::after {
     content: "";
     position: absolute;
     inset: 0;
-
     background: radial-gradient(circle at center,
-        rgba(0, 80, 160, 0.25),
+        var(--color-primary-alpha-20),
         rgba(0, 0, 0, 0.88));
-
     z-index: 1;
 }
+
 .hero > * {
     position: relative;
     z-index: 2;
 }
 
-
-
-
-
-/* --------- CONTENEDOR PRINCIPAL --------- */
-
+/* ================================================================
+   CONTENEDOR PRINCIPAL - COMPACTO
+================================================================ */
 .hero_content {
     display: flex;
     flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
 
     width: 100%;
-    padding-bottom: 0;
-    height: 13rem;
+    max-width: var(--container-xl);
+    
+    /* Gap entre texto y botones sociales */
+    gap: var(--spacing-xl);
 
-    /* Más azul translúcido, con sutil tinte púrpura pero muuuy leve */
-    /* background: rgba(0, 90, 180, 0.08); */
-
-    filter: drop-shadow(0 0 14px rgba(120, 70, 220, 0.25));
+    filter: drop-shadow(0 0 14px var(--color-secondary-alpha-20));
+    
+    /* CRÍTICO: Permite que el contenedor se ajuste al contenido */
+    min-height: 0;
 }
 
 .hero_text {
-    width: 100%;
+    /* CORREGIDO: Sin flex: 1 para que solo ocupe el espacio necesario */
     display: flex;
     flex-direction: column;
-
-    /* background: rgba(0, 90, 180, 0.08); */
+    align-items: center;
+    
+    /* Gap entre nombre, título y descripción */
+    gap: var(--spacing-sm);
+    
+    /* Asegura que el contenedor se ajuste al contenido */
+    width: 100%;
 }
 
-
-/* --------- BOTONES --------- */
-
+/* ================================================================
+   BOTONES SOCIALES - COMPACTOS
+================================================================ */
 .hero_buttons-container {
     display: flex;
     flex-direction: column;
-    flex: 1;
-    align-items: end;
-    max-width: 5rem;
+    
+    /* REDUCIDO: Menos espacio entre botones */
+    gap: var(--spacing-sm);
+    align-items: center;
 }
 
 .social-button {
     width: 50px;
     height: 50px;
-    border-radius: 50%;
-
-    /* Azul oscuro suave */
+    border-radius: var(--radius-full);
     background: rgba(0, 30, 80, 0.18);
-    /* backdrop-filter: blur(7px); */
-
-    /* Borde ahora púrpura-azulado */
-    border: 2px solid #7b5cffbe;
-    color: #9d84ff;
-
+    border: 2px solid var(--color-secondary);
+    color: var(--color-secondary-light);
     display: flex;
     align-items: center;
     justify-content: center;
-
-    transition: all 0.3s ease;
+    transition: all var(--transition-base);
+    cursor: pointer;
 }
 
 .social-button:hover {
-    /* Glow más frío (azul) con toque morado */
-    box-shadow:
-        0 0 12px #8d6fff,
-        0 0 22px #3aaaff;
+    box-shadow: var(--glow-secondary), var(--glow-primary);
     transform: scale(1.12);
 }
 
-
-/* --------- TEXTO --------- */
-
+/* ================================================================
+   TEXTO Y TÍTULOS - ESPACIADO OPTIMIZADO
+================================================================ */
 .hero_name {
-    font-size: var(--hero-name-size);
-    font-weight: 700;
-    margin-bottom: 0.5rem;
+    font-size: var(--hero-title-size);
+    font-weight: var(--font-weight-bold);
+    
+    /* REDUCIDO: Menos margen inferior */
+    margin-bottom: var(--spacing-xs);
+    margin-top: 0;
 
-    color: #ebf2ff;
-
+    color: var(--color-text-on-dark);
     text-shadow:
-        0 0 14px rgba(100, 70, 200, 0.45),
-        0 0 25px rgba(0, 140, 255, 0.28);
+        0 0 14px var(--color-secondary-alpha-30),
+        0 0 25px var(--color-primary-alpha-20);
 }
 
 .hero_dynamic-title {
     font-size: var(--hero-subtitle-size);
-    color: #cfe7ff;
+    color: var(--color-text-on-dark);
     opacity: 0.9;
+    
+    /* Sin margen extra */
+    margin: 0;
 }
 
-
-/* --------- DESCRIPCIÓN --------- */
-
+/* ================================================================
+   DESCRIPCIÓN - COMPACTA Y EFICIENTE
+================================================================ */
 .hero_description {
-    font-size: 0.95rem;
+    font-size: var(--font-size-sm);
     color: rgba(230, 240, 255, 0.92);
-    text-align: center;
-    align-content: center;
-
-    height: 30%;
-    max-width: 50rem;
-    margin: 3rem 3rem 0 3rem;
-
-    padding: 0.6rem 1rem;
-    border-radius: 10px;
-
-    /* Azul con un suspiro de púrpura */
-    background: rgba(0, 40, 110, 0.22);
-    backdrop-filter: blur(5px);
-
+    line-height: var(--line-height-normal);
+    
+    width: 100%;
+    max-width: 45rem;
+    
+    /* REDUCIDO: Márgenes y padding más pequeños */
+    margin: var(--spacing-md) auto 0;
+    padding: var(--spacing-md) var(--spacing-lg);
+    
+    border-radius: var(--radius-lg);
+    background: rgba(0, 40, 110, 0.35);
+    backdrop-filter: var(--blur-md);
     box-shadow:
-        0 0 10px rgba(110, 75, 255, 0.18),
-        0 0 18px rgba(0, 150, 255, 0.13);
+        0 0 10px var(--color-secondary-alpha-20),
+        0 0 18px var(--color-primary-alpha-10);
+    
+    display: block;
+    text-align: center;
 }
 
-
-/* --------- LINKS --------- */
-
+/* ================================================================
+   LINKS
+================================================================ */
 .hero a {
     display: inline-block;
-    margin: 0.5rem;
-    padding: var(--hero-button-padding);
-    border-radius: 8px;
-
-    color: #a88cff;
+    margin: var(--spacing-xs);
+    padding: var(--button-padding-sm);
+    border-radius: var(--radius-md);
+    color: var(--color-secondary-light);
     text-decoration: none;
-    font-weight: 600;
-
-    transition: all 0.3s ease;
+    font-weight: var(--font-weight-semibold);
+    transition: all var(--transition-base);
 }
 
 .hero a:hover {
     transform: scale(1.05);
     filter: brightness(1.18);
-
-    /* Glow morado-azulado */
-    text-shadow: 0 0 12px rgba(120, 80, 255, 0.5);
+    text-shadow: 0 0 12px var(--color-secondary-alpha-30);
 }
 
+/* ================================================================
+   RESPONSIVE - OPTIMIZADO PARA MÓVILES
+================================================================ */
+@media (max-width: 1200px) {
+    .hero {
+        padding: var(--spacing-xl) var(--spacing-2xl) 0;
+    }
 
-/* --------- RESPONSIVE --------- */
+    .hero_description {
+        max-width: 42rem;
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+}
+
+@media (max-width: 992px) {
+    .hero {
+        padding: var(--spacing-lg) var(--spacing-xl) 0;
+    }
+
+    .hero_content {
+        gap: var(--spacing-lg);
+    }
+
+    .hero_description {
+        max-width: 38rem;
+        font-size: 0.9rem;
+        padding: var(--spacing-sm) var(--spacing-md);
+        margin-top: var(--spacing-sm);
+    }
+}
 
 @media (max-width: 800px) {
-
     .hero {
         min-height: calc(100vh - var(--header-height-mobile));
-        padding: 1rem;
+        padding: var(--spacing-md);
         background-size: 17rem;
+        margin-top: var(--spacing-lg);
     }
 
     .hero_content {
         flex-direction: column;
         align-items: center;
-        padding: 1rem;
-        height: auto;
-        gap: 2rem;
+        padding: 0;
+        gap: var(--spacing-lg);
+    }
+
+    .hero_text {
+        gap: var(--spacing-xs);
     }
 
     .hero_buttons-container {
         flex-direction: row;
-        margin-top: 1rem;
         justify-content: center;
+        gap: var(--spacing-sm);
+        margin-top: 0;
+    }
+
+    .hero_name {
+        font-size: var(--hero-title-size-mobile);
+        margin-bottom: 0;
+    }
+
+    .hero_dynamic-title {
+        font-size: var(--hero-subtitle-size-mobile);
     }
 
     .hero_description {
-        font-size: 0.78rem;
+        font-size: 0.85rem;
         max-width: 90%;
-        margin-top: 1.5rem;
-        padding: 0.7rem 1rem;
+        margin-top: var(--spacing-sm);
+        padding: var(--spacing-sm) var(--spacing-md);
+        line-height: var(--line-height-snug);
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        padding: var(--spacing-sm);
+        margin-top: var(--spacing-md);
+    }
+
+    .hero::before {
+        background-size: 15rem;
+    }
+
+    .hero_name {
+        font-size: var(--font-size-3xl);
+    }
+
+    .hero_dynamic-title {
+        font-size: var(--font-size-xl);
+    }
+
+    .hero_description {
+        font-size: 0.8rem;
+        padding: var(--spacing-xs) var(--spacing-sm);
+        margin: var(--spacing-xs) var(--spacing-xs) 0;
+        max-width: 95%;
+    }
+
+    .social-button {
+        width: 45px;
+        height: 45px;
+    }
+
+    .hero a {
+        padding: 0.5rem 1rem;
+        margin: var(--spacing-xs);
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: var(--spacing-xs);
+        margin-top: var(--spacing-sm);
+    }
+
+    .hero_content {
+        gap: var(--spacing-md);
+    }
+
+    .hero_text {
+        gap: 0.25rem;
+    }
+
+    .hero_name {
+        font-size: var(--font-size-2xl);
+        margin-bottom: 0;
+    }
+
+    .hero_dynamic-title {
+        font-size: var(--font-size-lg);
+    }
+
+    .hero_description {
+        font-size: 0.75rem;
+        padding: var(--spacing-xs);
+        margin-top: var(--spacing-xs);
+        line-height: 1.4;
+    }
+
+    .social-button {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* ================================================================
+   ACCESIBILIDAD
+================================================================ */
+@media (prefers-reduced-motion: reduce) {
+    .social-button,
+    .hero a {
+        transition: none;
+    }
+
+    .social-button:hover,
+    .hero a:hover {
+        transform: none;
     }
 }
