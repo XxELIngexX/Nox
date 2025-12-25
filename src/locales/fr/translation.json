@@ -1,0 +1,149 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "skills": "Compétences",
+    "experience": "Expérience",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "common": {
+    "readMore": "Lire plus",
+    "learnMore": "En savoir plus",
+    "viewAll": "Voir tout",
+    "download": "Télécharger",
+    "close": "Fermer",
+    "submit": "Soumettre",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "downloadCV": "Télécharger CV",
+    "hireMe": "Engagez-moi",
+    "getInTouch": "Contactez-moi"
+  },
+  "hero": {
+    "name": "Cesar Amaya Gomez",
+    "title": "Développeur Full-Stack | Orientation Sécurité",
+    "description": "Si vous recherchez quelqu'un qui combine connaissances techniques avec une attitude proactive et polyvalence, vous êtes au bon endroit."
+  },
+  "aboutMe": {
+    "title": "À Propos de Moi",
+    "welcome": "C'est toujours un plaisir d'avoir des visiteurs, alors bienvenue.",
+    "intro": "Je suis un Développeur Full-Stack Junior avec un fort intérêt pour la construction de systèmes bien structurés et fiables. Au cours des dernières années, j'ai progressé dans le monde du développement logiciel en apprenant, expérimentant et créant des solutions non seulement fonctionnelles, mais conçues pour évoluer et s'adapter avec le temps.",
+    "philosophy": "Je vois l'ingénierie logicielle comme un équilibre entre créativité et stratégie. Chaque projet commence comme une toile vierge, et avant d'écrire la première ligne de code, j'aime penser à l'architecture, aux flux de travail, aux risques potentiels, aux considérations de sécurité et à l'expérience utilisateur. Pour moi, écrire du code ne consiste pas seulement à faire fonctionner les choses, mais à les rendre durables et sûres.",
+    "passion": "J'aime comprendre comment les systèmes se comportent, comment ils peuvent échouer et comment les concevoir mieux dès le départ. Cette curiosité est ce qui relie mon intérêt pour le développement à ma passion croissante pour la cybersécurité et la pensée défensive.",
+    "closing": "Merci de votre visite. Si ce que vous avez vu résonne avec vous, je serais ravi de faire partie de votre prochain projet.",
+    "location": "Basé en Colombie",
+    "age": "24 ans"
+  },
+  "cards": {
+    "skills": {
+      "title": "compétences",
+      "description": "Découvrez mes compétences en programmation, trouvez des informations sur ma connaissance des langues et plus encore."
+    },
+    "experience": {
+      "title": "expérience",
+      "description": "Découvrez la chronologie de mon éducation et apprenez-en plus sur mon expérience professionnelle."
+    },
+    "projects": {
+      "title": "projets",
+      "description": "Mon portfolio est ma plus grande fierté. Consultez mes travaux précédents et découvrez mieux mes compétences."
+    },
+    "languages": {
+      "spanish": {
+        "title": "Espagnol",
+        "description": "Natif"
+      },
+      "english": {
+        "title": "Anglais A2",
+        "description": "Je lis et écris confortablement, et j'améliore activement mes compétences en communication."
+      }
+    },
+    "learnMore": "En savoir plus"
+  },
+  "skills": {
+    "title": "Compétences en programmation",
+    "description": "Ce sont les outils avec lesquels je travaille tous les jours. Je ne me limite à aucun langage ou framework spécifique - je choisis ce qui convient le mieux au défi et je le pousse aussi loin que nécessaire. En tant que développeur, je peux apprendre n'importe quelle technologie car il ne s'agit plus seulement d'écrire des fonctions; il s'agit de comprendre la logique, le flux et comment l'information se déplace à travers le système. Une fois que vous comprenez cela, tout le reste n'est qu'une question d'adaptation."
+  },
+  "languagesTitle": "Langues",
+  "experience": {
+    "title": "Expérience",
+    "description": "De la vie universitaire à la gestion opérationnelle. Découvrez mon parcours, axé sur les compétences en leadership, communication et technologie.",
+    "education": {
+      "title": "Éducation",
+      "university": "Université Escuela Colombiana de Ingenieria Julio Garavito",
+      "universityDegree": "Ingénierie des Systèmes",
+      "diploma": "Université Distrital Francisco Jose de Caldas",
+      "diplomaDegree": "Diplôme de Cybersécurité",
+      "highschool": "Gimnasio los Alerces",
+      "highschoolDegree": "Diplôme de Lycée"
+    },
+    "work": {
+      "title": "Expérience Professionnelle",
+      "promoter": {
+        "title": "Promoteur Universitaire",
+        "description": "J'ai représenté l'université lors d'événements, gérant la logistique interne, guidant les futurs étudiants et gérant les interactions publiques.",
+        "skills": ["Communication", "Adaptabilité", "Organisation"]
+      },
+      "monitor": {
+        "title": "Moniteur Académique",
+        "description": "J'ai aidé les étudiants en logique, programmation et résolution de problèmes. J'ai fourni un tutorat personnalisé et un soutien académique.",
+        "skills": ["Enseignement", "Leadership", "Mentorat"]
+      },
+      "operations": {
+        "title": "Opérations et Service Client",
+        "description": "Rôles dans des environnements à forte demande (serveur, assistant, support opérationnel). Expérience chez: Café y Música Bar, Corparques, La Manrique.",
+        "skills": ["Gestion de la Pression", "Coordination", "Résolution Rapide"]
+      }
+    }
+  },
+  "projects": {
+    "title": "Projets",
+    "subtitle": "Explorez mon portfolio",
+    "versionsTitle": "Versions et Dépôts",
+    "viewRepository": "Voir le Dépôt"
+  },
+  "contact": {
+    "title": "Contact",
+    "intro": "Vous souhaitez me contacter?",
+    "subtitle": "Remplissez le formulaire ci-dessous et je vous répondrai dès que possible.",
+    "form": {
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "email": "Adresse Email",
+      "message": "Écrivez votre message ici",
+      "send": "Envoyer",
+      "sending": "Envoi..."
+    },
+    "success": {
+      "title": "Message Envoyé!",
+      "message": "Merci de m'avoir contacté. Je vous répondrai bientôt."
+    },
+    "divider": "Ou contactez via",
+    "whatsapp": "WhatsApp"
+  },
+  "footer": {
+    "brand": "Cesar Amaya",
+    "tagline": "Ingénieur Systèmes · Développeur Full Stack",
+    "description": "Création de solutions innovantes avec passion et précision.",
+    "quickLinks": "Liens Rapides",
+    "connect": "Connecter",
+    "copyright": "Cesar Amaya. Fait avec",
+    "location": "à Bogotá, Colombie",
+    "backToTop": "Retour en Haut",
+    "links": {
+      "about": "À Propos",
+      "skills": "Compétences",
+      "experience": "Expérience",
+      "projects": "Projets",
+      "contact": "Contact"
+    },
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Email"
+    }
+  }
+}

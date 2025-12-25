@@ -1,8 +1,4 @@
-/* ================================================================
-   EXPERIENCE SECTION - REESCRITO CON VARIABLES GLOBALES
-   Usa: Sistema completo de variables de globals.css
-================================================================ */
-
+/* ===== EXPERIENCE SECTION ===== */
 .experience-continer {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -11,12 +7,22 @@
     min-height: 100vh;
     position: relative;
     
-    /* FONDO: Blanco puro para máximo contraste */
+    /* TEMA CLARO */
     background: var(--color-surface-light);
     padding-top: var(--spacing-4xl);
     border-radius: var(--radius-xl);
-    margin: var(--spacing-2xl) auto;
-    box-shadow: var(--shadow-primary);
+    margin: var(--spacing-xl) auto;
+    box-shadow: var(--shadow-md);
+}
+
+/* DARK MODE */
+@media (prefers-color-scheme: dark) {
+    .experience-continer {
+        background: rgba(30, 30, 37, 0.8);
+        box-shadow: 
+            0 8px 32px rgba(53, 107, 250, 0.15),
+            0 4px 16px rgba(0, 0, 0, 0.4);
+    }
 }
 
 /* Línea central - MEJORADA CON COLORES */
@@ -27,31 +33,21 @@
     top: 200px;
     bottom: 0;
     width: 2px;
-    background: linear-gradient(
-        180deg,
-        var(--color-primary) 0%,
-        var(--color-secondary) 20%,
-        var(--color-accent) 50%,
-        var(--color-secondary) 80%,
-        var(--color-primary) 100%
-    );
+    background: var(--gradient-primary);
     opacity: 0.6;
     transform: translateX(-1px);
-    z-index: 1;
+    z-index: var(--z-base);
 }
 
-/* ================================================================
-   TITULO PRINCIPAL
-================================================================ */
+/* ===== TITULO PRINCIPAL ===== */
 .experience-title {
     grid-column: 1 / 3;
     font-size: var(--font-size-5xl);
     font-weight: var(--font-weight-bold);
     text-align: center;
-    margin: 0 0 var(--spacing-md) 0;
+    margin: 0 0 var(--spacing-md);
     padding: 0;
     
-    /* Degradado primario → secundario */
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -69,7 +65,7 @@
     font-size: var(--font-size-lg);
     text-align: center;
     
-    /* TEXTO: Negro oscuro para máxima legibilidad */
+    /* TEMA CLARO */
     color: var(--color-text-primary);
     max-width: 800px;
     margin: 0 auto var(--spacing-3xl);
@@ -78,20 +74,29 @@
     transition: color var(--transition-base);
 }
 
+/* DARK MODE */
+@media (prefers-color-scheme: dark) {
+    .experience-description {
+        color: rgba(240, 244, 248, 0.85);
+    }
+    
+    .experience-description:hover {
+        color: var(--color-primary-light);
+    }
+}
+
 .experience-description:hover {
     color: var(--color-primary);
 }
 
-/* ================================================================
-   IMAGENES
-================================================================ */
+/* ===== IMAGENES ===== */
 .experience-image {
     display: flex;
     justify-content: center;
     align-items: center;
     max-width: 95%;
     opacity: 0.75;
-    margin: var(--spacing-2xl) auto;
+    margin: var(--spacing-xl) auto;
     transition: opacity var(--transition-base);
 }
 
@@ -107,45 +112,51 @@
     grid-column: 2;
 }
 
-/* ================================================================
-   COLUMNAS
-================================================================ */
+/* ===== COLUMNAS ===== */
 .education-list,
 .work-experience-list {
-    padding: var(--spacing-2xl);
+    padding: var(--spacing-xl);
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-2xl);
+    gap: var(--spacing-xl);
     position: relative;
 }
 
 .education-list {
     border-right: 2px solid var(--color-border-primary);
-    padding: 0 var(--spacing-3xl) var(--spacing-2xl) var(--spacing-2xl);
+    padding: 0 var(--spacing-3xl) var(--spacing-xl) var(--spacing-xl);
 }
 
 .work-experience-list {
     border-left: 2px solid var(--color-border-primary);
-    padding: 0 var(--spacing-2xl) var(--spacing-2xl) var(--spacing-3xl);
+    padding: 0 var(--spacing-xl) var(--spacing-xl) var(--spacing-3xl);
 }
 
-/* ================================================================
-   TITULOS DE SECCIONES
-================================================================ */
+/* DARK MODE - Bordes más visibles */
+@media (prefers-color-scheme: dark) {
+    .education-list {
+        border-right: 2px solid rgba(122, 92, 255, 0.3);
+    }
+    
+    .work-experience-list {
+        border-left: 2px solid rgba(122, 92, 255, 0.3);
+    }
+}
+
+/* ===== TITULOS DE SECCIONES ===== */
 .education-list h3,
 .work-experience-list h3 {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-2xl);
     font-weight: var(--font-weight-bold);
     text-transform: uppercase;
     letter-spacing: var(--letter-spacing-wider);
     
-    /* Degradado primario → secundario */
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     
-    margin-bottom: var(--spacing-2xl);
+    margin-bottom: var(--spacing-xl);
     transition: all var(--transition-base);
 }
 
@@ -154,47 +165,58 @@
     filter: brightness(1.15);
 }
 
-/* ================================================================
-   ITEMS (TARJETAS) - UNIFICADAS
-================================================================ */
+/* ===== ITEMS (TARJETAS) - UNIFICADAS ===== */
 .education-item,
 .work-experience-item {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
     padding: var(--spacing-lg);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xl);
     
-    /* FONDO: Blanco con tint azul muy sutil */
-    background: linear-gradient(135deg, var(--color-bg-primary), #F0F7FF);
+    /* TEMA CLARO */
+    background: linear-gradient(135deg, #F8FAFC, #F0F7FF);
     border: 2px solid var(--color-border-primary);
     backdrop-filter: var(--blur-md);
     
     transition: all var(--transition-base);
 }
 
-.education-item:hover,
-.work-experience-item:hover {
-    background: linear-gradient(135deg, var(--color-surface-light), #F5F9FF);
-    border-color: var(--color-primary-alpha-30);
-    transform: translateY(-4px);
-    box-shadow: 
-        var(--shadow-primary),
-        0 0 20px var(--color-secondary-alpha-10);
+/* DARK MODE */
+@media (prefers-color-scheme: dark) {
+    .education-item,
+    .work-experience-item {
+        background: linear-gradient(135deg, rgba(30, 30, 37, 0.6), rgba(53, 107, 250, 0.08));
+        border: 2px solid rgba(122, 92, 255, 0.25);
+    }
 }
 
-/* ================================================================
-   FECHAS - UNIFICADAS
-================================================================ */
+.education-item:hover,
+.work-experience-item:hover {
+    border-color: var(--color-primary-alpha-30);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* DARK MODE - Hover */
+@media (prefers-color-scheme: dark) {
+    .education-item:hover,
+    .work-experience-item:hover {
+        background: linear-gradient(135deg, rgba(30, 30, 37, 0.8), rgba(53, 107, 250, 0.12));
+        border-color: rgba(122, 92, 255, 0.5);
+        box-shadow: 
+            0 8px 24px rgba(122, 92, 255, 0.3),
+            0 0 20px rgba(53, 107, 250, 0.2);
+    }
+}
+
+/* ===== FECHAS - UNIFICADAS ===== */
 .education-item-date,
 .work-experience-item-date {
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-bold);
-    
-    /* FECHA: Usa el primario */
     color: var(--color-primary);
     margin-bottom: var(--spacing-sm);
-    
     transition: color var(--transition-base);
 }
 
@@ -203,52 +225,67 @@
     color: var(--color-secondary);
 }
 
-/* ================================================================
-   DESCRIPCIÓN EN EDUCACIÓN
-================================================================ */
+/* ===== DESCRIPCIÓN EN EDUCACIÓN ===== */
 .education-item-description {
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
     
-    /* Negro oscuro para legibilidad */
+    /* TEMA CLARO */
     color: var(--color-text-primary);
     line-height: var(--line-height-normal);
     margin: var(--spacing-xs) 0;
     
     transition: color var(--transition-base);
+}
+
+/* DARK MODE */
+@media (prefers-color-scheme: dark) {
+    .education-item-description {
+        color: rgba(240, 244, 248, 0.85);
+    }
+    
+    .education-item:hover .education-item-description {
+        color: var(--color-primary-light);
+    }
 }
 
 .education-item:hover .education-item-description {
     color: var(--color-primary);
 }
 
-/* ================================================================
-   TITULO DEL PUESTO
-================================================================ */
+/* ===== TITULO DEL PUESTO ===== */
 .work-experience-item-title {
     font-size: var(--font-size-xl);
     font-weight: var(--font-weight-bold);
     
-    /* Negro oscuro para legibilidad */
+    /* TEMA CLARO */
     color: var(--color-text-primary);
     margin-bottom: var(--spacing-sm);
     
     transition: color var(--transition-base);
 }
 
-/* ANIMACIÓN EN HOVER */
+/* DARK MODE */
+@media (prefers-color-scheme: dark) {
+    .work-experience-item-title {
+        color: rgba(248, 250, 252, 0.95);
+    }
+    
+    .work-experience-item:hover .work-experience-item-title {
+        color: var(--color-primary-light);
+    }
+}
+
 .work-experience-item:hover .work-experience-item-title {
     color: var(--color-primary);
 }
 
-/* ================================================================
-   DESCRIPCIÓN DEL TRABAJO
-================================================================ */
+/* ===== DESCRIPCIÓN DEL TRABAJO ===== */
 .work-experience-item-description {
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
     
-    /* Negro oscuro para legibilidad */
+    /* TEMA CLARO */
     color: var(--color-text-primary);
     line-height: var(--line-height-normal);
     margin: var(--spacing-xs) 0;
@@ -256,14 +293,22 @@
     transition: color var(--transition-base);
 }
 
-/* ANIMACIÓN EN HOVER */
-.work-experience-item:hover .work-experience-item-description {
-    color: var(--color-primary);
+/* DARK MODE */
+@media (prefers-color-scheme: dark) {
+    .work-experience-item-description {
+        color: rgba(240, 244, 248, 0.85);
+    }
+    
+    .work-experience-item:hover .work-experience-item-description {
+        color: rgba(255, 255, 255, 0.95);
+    }
 }
 
-/* ================================================================
-   SKILLS BADGES
-================================================================ */
+.work-experience-item:hover .work-experience-item-description {
+    color: var(--color-text-secondary);
+}
+
+/* ===== SKILLS BADGES ===== */
 .work-experience-skills {
     display: flex;
     flex-wrap: wrap;
@@ -273,6 +318,13 @@
     border-top: 1px solid var(--color-border-primary);
 }
 
+/* DARK MODE - Borde más visible */
+@media (prefers-color-scheme: dark) {
+    .work-experience-skills {
+        border-top: 1px solid rgba(122, 92, 255, 0.3);
+    }
+}
+
 .skill-badge {
     display: inline-block;
     padding: var(--spacing-sm) var(--spacing-md);
@@ -280,26 +332,21 @@
     font-size: var(--font-size-xs);
     font-weight: var(--font-weight-semibold);
     
-    /* Degradado primario → acento */
-    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    background: var(--gradient-secondary);
     color: var(--color-text-on-primary);
     border: none;
     
     transition: all var(--transition-base);
     cursor: default;
-    box-shadow: var(--shadow-primary);
+    box-shadow: var(--shadow-sm);
 }
 
 .skill-badge:hover {
     transform: scale(1.08);
-    box-shadow: 
-        0 8px 20px var(--color-primary-alpha-30),
-        var(--glow-accent);
+    box-shadow: var(--glow-primary);
 }
 
-/* ================================================================
-   RESPONSIVE
-================================================================ */
+/* ===== RESPONSIVE ===== */
 
 /* Tablets y pantallas medianas */
 @media (max-width: 992px) {
@@ -318,16 +365,16 @@
     }
 
     .education-list {
-        padding: 0 var(--spacing-2xl) var(--spacing-2xl) var(--spacing-lg);
+        padding: 0 var(--spacing-xl) var(--spacing-xl) var(--spacing-lg);
     }
 
     .work-experience-list {
-        padding: 0 var(--spacing-lg) var(--spacing-2xl) var(--spacing-2xl);
+        padding: 0 var(--spacing-lg) var(--spacing-xl) var(--spacing-xl);
     }
 
     .education-list h3,
     .work-experience-list h3 {
-        font-size: var(--font-size-2xl);
+        font-size: var(--font-size-xl);
     }
 }
 
@@ -335,7 +382,7 @@
 @media (max-width: 768px) {
     .experience-continer {
         grid-template-columns: 1fr;
-        padding: var(--spacing-2xl) var(--spacing-md);
+        padding: var(--spacing-xl) var(--spacing-md);
         margin: var(--spacing-md);
         min-height: auto;
     }
@@ -344,7 +391,6 @@
         display: none;
     }
 
-    /* Corregir grid-column para móvil */
     .experience-title,
     .experience-description {
         grid-column: 1;
@@ -357,7 +403,7 @@
 
     .experience-description {
         font-size: var(--font-size-sm);
-        margin-bottom: var(--spacing-2xl);
+        margin-bottom: var(--spacing-xl);
         padding: 0;
     }
 
@@ -373,7 +419,7 @@
     }
 
     .education-list {
-        margin-bottom: var(--spacing-2xl);
+        margin-bottom: var(--spacing-xl);
     }
 
     .education-list h3,
@@ -398,14 +444,14 @@
     }
 
     .work-experience-skills {
-        gap: var(--spacing-sm);
+        gap: var(--spacing-xs);
         margin-top: var(--spacing-sm);
         padding-top: var(--spacing-sm);
     }
 
     .skill-badge {
         padding: var(--spacing-xs) var(--spacing-sm);
-        font-size: var(--font-size-xs);
+        font-size: 0.8rem;
     }
 }
 
@@ -443,12 +489,12 @@
     .work-experience-item {
         padding: var(--spacing-md);
         border-radius: var(--radius-md);
-        gap: var(--spacing-sm);
+        gap: var(--spacing-xs);
     }
 
     .education-item-date,
     .work-experience-item-date {
-        font-size: var(--font-size-xs);
+        font-size: 0.85rem;
         margin-bottom: var(--spacing-xs);
     }
 
@@ -459,51 +505,23 @@
 
     .education-item-description,
     .work-experience-item-description {
-        font-size: var(--font-size-xs);
+        font-size: 0.85rem;
         line-height: var(--line-height-snug);
     }
 
     .work-experience-skills {
         gap: var(--spacing-xs);
-        margin-top: var(--spacing-sm);
-        padding-top: var(--spacing-sm);
+        margin-top: var(--spacing-xs);
+        padding-top: var(--spacing-xs);
     }
 
     .skill-badge {
-        padding: var(--spacing-xs);
-        font-size: var(--font-size-xs);
+        padding: 0.35rem 0.7rem;
+        font-size: 0.75rem;
     }
 }
 
-/* Móviles muy pequeños */
-@media (max-width: 360px) {
-    .experience-title {
-        font-size: var(--font-size-xl);
-    }
-
-    .experience-description {
-        font-size: var(--font-size-xs);
-    }
-
-    .education-list h3,
-    .work-experience-list h3 {
-        font-size: var(--font-size-lg);
-    }
-
-    .education-item,
-    .work-experience-item {
-        padding: var(--spacing-sm);
-    }
-
-    .skill-badge {
-        padding: var(--spacing-xs);
-        font-size: 0.7rem;
-    }
-}
-
-/* ================================================================
-   ACCESIBILIDAD
-================================================================ */
+/* ===== ACCESIBILIDAD ===== */
 @media (prefers-reduced-motion: reduce) {
     .education-item,
     .work-experience-item,

@@ -1,4 +1,4 @@
-
+import { useTranslation } from 'react-i18next';
 import Header from './components/Header';
 import './styles/globals.css';
 import './App.css'
@@ -10,9 +10,9 @@ import Experience from './components/Experience';
 import Projects from './components/Projects.jsx';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-// import ScrollToTop from './components/ScrollToTop';
+
 function App() {
- 
+  const { t } = useTranslation();
   
   return (
     <>
@@ -24,21 +24,20 @@ function App() {
 
       <div className='split'>
         <Card
-          tittle="skills"
-          description="Learn about my skills in programming, find info on my language knowledge and more."
+          tittle={t('cards.skills.title')}
+          description={t('cards.skills.description')}
           linkActive={true}
           to="skills"
         />
         <Card
-          tittle="experience"
-          description="Get to know the timeline of my education and find out more about my working experience."
+          tittle={t('cards.experience.title')}
+          description={t('cards.experience.description')}
           linkActive={true}
           to="experience"
-
         />
         <Card
-          tittle="projects"
-          description="My portfolio is my biggest pride. Check my previous works and get to know my skills better."
+          tittle={t('cards.projects.title')}
+          description={t('cards.projects.description')}
           linkActive={true}
           to="projects"
         />
@@ -46,27 +45,25 @@ function App() {
 
       <Skills />
 
-       <h3>Languages</h3>
+      <h3>{t('languagesTitle')}</h3>
       <div id='lengugaes' className='split'>
         <Card 
-          tittle="Spanish"
-          description="Native"
+          tittle={t('cards.languages.spanish.title')}
+          description={t('cards.languages.spanish.description')}
           linkActive={false}
         />
         <Card 
-          tittle="English A2"
-          description="I read and write comfortably, and I'm actively improving my communication skills."
+          tittle={t('cards.languages.english.title')}
+          description={t('cards.languages.english.description')}
           linkActive={false}
         />
-        
-
       </div>
+
       <Experience />
   
       <Projects />
       <Contact />
       <Footer />
-      {/* <ScrollToTop /> */}
     </>
   );
 }

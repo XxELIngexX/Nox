@@ -28,9 +28,8 @@
     inset: 0;
     
     /* Contain = Imagen completa visible, sin cortar */
-    background: url('../assets/photo2.jpeg') center center / contain no-repeat;
-    
-    filter: blur(2.4px);
+    background: url('../assets/photo2.jpeg') center center / contain no-repeat;    
+    filter: blur(2px);
     z-index: 0;
 }
 

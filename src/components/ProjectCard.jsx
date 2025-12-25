@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { FiGithub, FiExternalLink, FiChevronDown } from 'react-icons/fi';
+import { useTranslation } from 'react-i18next';
 import '../styles/projectCard.css';
 
 const ProjectCard = ({ 
@@ -11,6 +12,7 @@ const ProjectCard = ({
     website, 
     demoLink 
 }) => {
+    const { t } = useTranslation();
     const [expandedVersion, setExpandedVersion] = useState(null);
 
     const toggleVersion = (versionId) => {
@@ -37,7 +39,7 @@ const ProjectCard = ({
                 {/* VERSIONES / REPOSITORIOS */}
                 {hasVersions && versions && (
                     <div className='project-card__versions'>
-                        <h4 className='versions__title'>Versions & Repositories</h4>
+                        <h4 className='versions__title'>{t('projects.versionsTitle')}</h4>
                         
                         {versions.map((version) => (
                             <div key={version.id} className='version-item'>
@@ -70,7 +72,7 @@ const ProjectCard = ({
                                             className='version-content__link'
                                         >
                                             <FiGithub size={18} />
-                                            View Repository
+                                            {t('projects.viewRepository')}
                                         </a>
                                     </div>
                                 )}

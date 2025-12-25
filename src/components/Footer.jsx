@@ -1,8 +1,11 @@
 import React from 'react';
 import { FiGithub, FiLinkedin, FiMail, FiHeart, FiArrowUp } from 'react-icons/fi';
+import { useTranslation } from 'react-i18next';
 import '../styles/footer.css';
 
 const Footer = () => {
+  const { t } = useTranslation();
+  
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -19,60 +22,56 @@ const Footer = () => {
         <div className="footer__content">
           {/* Columna 1: Branding */}
           <div className="footer__column footer__column--brand">
-            <h3 className="footer__brand">Cesar Amaya</h3>
-            <p className="footer__tagline">
-              Systems Engineer · Full Stack Developer
-            </p>
-            <p className="footer__description">
-              Building innovative solutions with passion and precision.
-            </p>
+            <h3 className="footer__brand">{t('footer.brand')}</h3>
+            <p className="footer__tagline">{t('footer.tagline')}</p>
+            <p className="footer__description">{t('footer.description')}</p>
           </div>
 
           {/* Columna 2: Quick Links */}
           <div className="footer__column">
-            <h4 className="footer__column-title">Quick Links</h4>
+            <h4 className="footer__column-title">{t('footer.quickLinks')}</h4>
             <ul className="footer__links">
               <li>
-                <a href="#about" className="footer__link">About</a>
+                <a href="#about" className="footer__link">{t('footer.links.about')}</a>
               </li>
               <li>
-                <a href="#skills" className="footer__link">Skills</a>
+                <a href="#skills" className="footer__link">{t('footer.links.skills')}</a>
               </li>
               <li>
-                <a href="#experience" className="footer__link">Experience</a>
+                <a href="#experience" className="footer__link">{t('footer.links.experience')}</a>
               </li>
               <li>
-                <a href="#projects" className="footer__link">Projects</a>
+                <a href="#projects" className="footer__link">{t('footer.links.projects')}</a>
               </li>
               <li>
-                <a href="#contact" className="footer__link">Contact</a>
+                <a href="#contact" className="footer__link">{t('footer.links.contact')}</a>
               </li>
             </ul>
           </div>
 
           {/* Columna 3: Social */}
           <div className="footer__column">
-            <h4 className="footer__column-title">Connect</h4>
+            <h4 className="footer__column-title">{t('footer.connect')}</h4>
             <div className="footer__social">
               <a 
-                href="https://github.com/tuusuario" 
+                href="https://github.com/XxELIngexX" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="footer__social-link"
                 aria-label="GitHub"
               >
                 <FiGithub size={20} />
-                <span>GitHub</span>
+                <span>{t('footer.social.github')}</span>
               </a>
               <a 
-                href="https://linkedin.com/in/tuusuario" 
+                href="https://www.linkedin.com/in/cesar-amaya-gomez/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="footer__social-link"
                 aria-label="LinkedIn"
               >
                 <FiLinkedin size={20} />
-                <span>LinkedIn</span>
+                <span>{t('footer.social.linkedin')}</span>
               </a>
               <a 
                 href="mailto:cesar.amaya.gomes@gmail.com"
@@ -80,7 +79,7 @@ const Footer = () => {
                 aria-label="Email"
               >
                 <FiMail size={20} />
-                <span>Email</span>
+                <span>{t('footer.social.email')}</span>
               </a>
             </div>
           </div>
@@ -93,7 +92,7 @@ const Footer = () => {
         <div className="footer__bottom">
           <div className="footer__copyright">
             <p>
-              © {currentYear} Cesar Amaya. Made with <FiHeart className="footer__heart" /> in Bogotá, Colombia
+              © {currentYear} {t('footer.copyright')} <FiHeart className="footer__heart" /> {t('footer.location')}
             </p>
           </div>
 
@@ -104,7 +103,7 @@ const Footer = () => {
             aria-label="Scroll to top"
           >
             <FiArrowUp size={18} />
-            <span>Back to Top</span>
+            <span>{t('footer.backToTop')}</span>
           </button>
         </div>
       </div>

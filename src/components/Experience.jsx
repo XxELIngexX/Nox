@@ -1,91 +1,84 @@
 import React from 'react';
-import educationImg from '../assets/education.jpg';
-import workImg from '../assets/work.jpg';
-
+import { useTranslation } from 'react-i18next';
 import '../styles/experience.css';
 
 const Experience = () => {
+    const { t } = useTranslation();
+
+    // Obtener los arrays de skills de forma segura
+    const promoterSkills = t('experience.work.promoter.skills', { returnObjects: true });
+    const monitorSkills = t('experience.work.monitor.skills', { returnObjects: true });
+    const operationsSkills = t('experience.work.operations.skills', { returnObjects: true });
+
     return (
         <section id="experience" className="experience-continer">
-            <h1 className="experience-title">Experience</h1>
+            <h1 className="experience-title">{t('experience.title')}</h1>
 
-            <p className="experience-description">From university life to operational management. Discover my experience timeline, focused on leadership, communication, and technology skills.</p>
-
-            {/* IMAGEN 1: La que se coloca en la esquina superior izquierda */}
-            {/* <img
-                className="experience-image image-education"
-                src={educationImg}
-                alt="Education"
-            /> */}
+            <p className="experience-description">{t('experience.description')}</p>
 
             {/* EDUCACIÓN */}
             <div className="education-list">
-                <h3>Education</h3>
+                <h3>{t('experience.education.title')}</h3>
 
                 <div className="education-item">
                     <h2 className="education-item-date">2020 - 2025</h2>
-                    <p className="education-item-description">Escuela Colombiana de Ingenieria Julio Garavito University</p>
-                    <p className="education-item-description">Systems Engineering</p>
+                    <p className="education-item-description">{t('experience.education.university')}</p>
+                    <p className="education-item-description">{t('experience.education.universityDegree')}</p>
                 </div>
 
                 <div className="education-item">
                     <h2 className="education-item-date">2024</h2>
-                    <p className="education-item-description">Francisco Jose de Caldas District University</p>
-                    <p className="education-item-description">Cybersecurity Diploma</p>
+                    <p className="education-item-description">{t('experience.education.diploma')}</p>
+                    <p className="education-item-description">{t('experience.education.diplomaDegree')}</p>
                 </div>
 
                 <div className="education-item">
                     <h2 className="education-item-date">2019</h2>
-                    <p className="education-item-description">Gimnasio los Alerces</p>
-                    <p className="education-item-description">High School Diploma</p>
+                    <p className="education-item-description">{t('experience.education.highschool')}</p>
+                    <p className="education-item-description">{t('experience.education.highschoolDegree')}</p>
                 </div>
             </div>
 
             {/* EXPERIENCIA LABORAL */}
             <div className="work-experience-list">
-                <h3>Work Experience</h3>
+                <h3>{t('experience.work.title')}</h3>
 
+                {/* PROMOTER */}
                 <div className="work-experience-item">
                     <h2 className="work-experience-item-date">2022 - 2025</h2>
-                    <p className="work-experience-item-title">University Promoter</p>
-                    <p className="work-experience-item-description">Represented the university at events, handling internal logistics, guiding prospective students, and managing public interactions.</p>
+                    <p className="work-experience-item-title">{t('experience.work.promoter.title')}</p>
+                    <p className="work-experience-item-description">{t('experience.work.promoter.description')}</p>
                     <div className="work-experience-skills">
-                        <span className="skill-badge">Communication</span>
-                        <span className="skill-badge">Adaptability</span>
-                        <span className="skill-badge">Organization</span>
+                        {Array.isArray(promoterSkills) && promoterSkills.map((skill, index) => (
+                            <span key={index} className="skill-badge">{skill}</span>
+                        ))}
                     </div>
                 </div>
 
+                {/* MONITOR */}
                 <div className="work-experience-item">
                     <h2 className="work-experience-item-date">2022 - 2025</h2>
-                    <p className="work-experience-item-title">Academic Monitor</p>
-                    <p className="work-experience-item-description">Assisted students with logic, programming, and problem-solving. Provided personalized tutoring and academic support.</p>
+                    <p className="work-experience-item-title">{t('experience.work.monitor.title')}</p>
+                    <p className="work-experience-item-description">{t('experience.work.monitor.description')}</p>
                     <div className="work-experience-skills">
-                        <span className="skill-badge">Teaching</span>
-                        <span className="skill-badge">Leadership</span>
-                        <span className="skill-badge">Mentoring</span>
+                        {Array.isArray(monitorSkills) && monitorSkills.map((skill, index) => (
+                            <span key={index} className="skill-badge">{skill}</span>
+                        ))}
                     </div>
                 </div>
 
+                {/* OPERATIONS */}
                 <div className="work-experience-item">
                     <h2 className="work-experience-item-date">2019 - 2024</h2>
-                    <p className="work-experience-item-title">Operations & Customer Service</p>
-                    <p className="work-experience-item-description">Roles in high-demand environments (waiter, assistant, operational support). Experience at: Café y Música Bar, Corparques, La Manrique.</p>
+                    <p className="work-experience-item-title">{t('experience.work.operations.title')}</p>
+                    <p className="work-experience-item-description">{t('experience.work.operations.description')}</p>
                     <div className="work-experience-skills">
-                        <span className="skill-badge">Pressure Handling</span>
-                        <span className="skill-badge">Coordination</span>
-                        <span className="skill-badge">Quick Resolution</span>
+                        {Array.isArray(operationsSkills) && operationsSkills.map((skill, index) => (
+                            <span key={index} className="skill-badge">{skill}</span>
+                        ))}
                     </div>
                 </div>
             </div>
-
-            {/* IMAGEN 2: La que se coloca en la esquina inferior derecha */}
-            {/* <img
-                className="experience-image image-work"
-                src={workImg}
-                alt="Professional"
-            /> */}
-
         </section>
     );
 }

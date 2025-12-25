@@ -1,0 +1,133 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre Mí",
+    "skills": "Habilidades",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "name": "Cesar Amaya Gomez",
+    "title": "Desarrollador Full-Stack | Enfoque en Seguridad",
+    "description": "Si buscas a alguien que combine conocimiento técnico con actitud proactiva y versatilidad, has llegado al lugar correcto."
+  },
+  "aboutMe": {
+    "title": "Sobre Mí",
+    "welcome": "Siempre es un placer tener visitas, así que bienvenido.",
+    "intro": "Soy un Desarrollador Full-Stack Junior con un fuerte interés en construir sistemas bien estructurados y confiables. Durante los últimos años, he crecido en el mundo del desarrollo de software aprendiendo, experimentando y construyendo soluciones que no solo son funcionales, sino diseñadas para evolucionar y escalar con el tiempo.",
+    "philosophy": "Veo la ingeniería de software como un equilibrio entre creatividad y estrategia. Cada proyecto comienza como un lienzo en blanco, y antes de escribir la primera línea de código, me gusta pensar en la arquitectura, los flujos de trabajo, los riesgos potenciales, las consideraciones de seguridad y la experiencia del usuario. Para mí, escribir código no se trata solo de hacer que las cosas funcionen, sino de hacerlas sostenibles y seguras.",
+    "passion": "Disfruto entender cómo se comportan los sistemas, cómo pueden fallar y cómo diseñarlos mejor desde el principio. Esa curiosidad es lo que conecta mi interés en el desarrollo con mi creciente pasión por la ciberseguridad y el pensamiento defensivo.",
+    "closing": "Gracias por visitarme. Si lo que has visto resuena contigo, estaré encantado de ser parte de tu próximo proyecto.",
+    "location": "Ubicado en Colombia",
+    "age": "24 años"
+  },
+  "cards": {
+    "skills": {
+      "title": "habilidades",
+      "description": "Conoce mis habilidades en programación, encuentra información sobre mi conocimiento de idiomas y más."
+    },
+    "experience": {
+      "title": "experiencia",
+      "description": "Conoce la cronología de mi educación y descubre más sobre mi experiencia laboral."
+    },
+    "projects": {
+      "title": "proyectos",
+      "description": "Mi portafolio es mi mayor orgullo. Revisa mis trabajos previos y conoce mejor mis habilidades."
+    },
+    "languages": {
+      "spanish": {
+        "title": "Español",
+        "description": "Nativo"
+      },
+      "english": {
+        "title": "Inglés A2",
+        "description": "Leo y escribo cómodamente, y estoy mejorando activamente mis habilidades de comunicación."
+      }
+    },
+    "learnMore": "Saber más"
+  },
+  "skills": {
+    "title": "Habilidades de programación",
+    "description": "Estas son las herramientas con las que trabajo todos los días. No me limito a ningún lenguaje o framework específico: elijo lo que mejor se adapte al desafío y lo llevo tan lejos como sea necesario. Como desarrollador, puedo aprender cualquier tecnología porque ya no se trata solo de escribir funciones; se trata de entender la lógica, el flujo y cómo se mueve la información a través del sistema. Una vez que lo entiendes, todo lo demás es solo cuestión de adaptación."
+  },
+  "languagesTitle": "Idiomas",
+  "experience": {
+    "title": "Experiencia",
+    "description": "De la vida universitaria a la gestión operativa. Conoce mi cronología de experiencia, enfocada en habilidades de liderazgo, comunicación y tecnología.",
+    "education": {
+      "title": "Educación",
+      "university": "Universidad Escuela Colombiana de Ingeniería Julio Garavito",
+      "universityDegree": "Ingeniería de Sistemas",
+      "diploma": "Universidad Distrital Francisco José de Caldas",
+      "diplomaDegree": "Diplomado de Ciberseguridad",
+      "highschool": "Gimnasio los Alerces",
+      "highschoolDegree": "Bachillerato"
+    },
+    "work": {
+      "title": "Experiencia Laboral",
+      "promoter": {
+        "title": "Promotor Universitario",
+        "description": "Represento a la universidad en eventos, moviéndome entre logística interna, orientación a futuros estudiantes y manejo de público.",
+        "skills": ["Comunicación", "Adaptabilidad", "Organización"]
+      },
+      "monitor": {
+        "title": "Monitor Académico",
+        "description": "Acompañé a estudiantes en lógica, programación y resolución de problemas. Daba asesorías personalizadas.",
+        "skills": ["Pedagogía", "Liderazgo", "Mentoría"]
+      },
+      "operations": {
+        "title": "Operaciones y Atención al Cliente",
+        "description": "Roles en ambientes de alta demanda (mesero, auxiliar, apoyo operativo). Experiencias: Café y Música Bar, Corparques, La Manrique.",
+        "skills": ["Manejo de Presión", "Coordinación", "Resolución Rápida"]
+      }
+    }
+  },
+  "projects": {
+    "title": "Proyectos",
+    "subtitle": "Explora mi portafolio de trabajo",
+    "versionsTitle": "Versiones y Repositorios",
+    "viewRepository": "Ver Repositorio"
+  },
+  "contact": {
+    "title": "Contacto",
+    "intro": "¿Quieres ponerte en contacto?",
+    "subtitle": "Completa el formulario a continuación y te responderé lo antes posible.",
+    "form": {
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "email": "Correo Electrónico",
+      "message": "Escribe tu mensaje aquí",
+      "send": "Enviar",
+      "sending": "Enviando..."
+    },
+    "success": {
+      "title": "¡Mensaje Enviado!",
+      "message": "Gracias por contactarme. Te responderé pronto."
+    },
+    "divider": "O contacta vía",
+    "whatsapp": "WhatsApp"
+  },
+  "footer": {
+    "brand": "Cesar Amaya",
+    "tagline": "Ingeniero de Sistemas · Desarrollador Full Stack",
+    "description": "Construyendo soluciones innovadoras con pasión y precisión.",
+    "quickLinks": "Enlaces Rápidos",
+    "connect": "Conectar",
+    "copyright": "Cesar Amaya. Hecho con",
+    "location": "en Bogotá, Colombia",
+    "backToTop": "Volver Arriba",
+    "links": {
+      "about": "Sobre Mí",
+      "skills": "Habilidades",
+      "experience": "Experiencia",
+      "projects": "Proyectos",
+      "contact": "Contacto"
+    },
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Correo"
+    }
+  }
+}

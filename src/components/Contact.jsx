@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { FiSend, FiMessageCircle } from 'react-icons/fi';
+import { useTranslation } from 'react-i18next';
 import '../styles/contact.css';
 
 const Contact = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -49,11 +51,11 @@ const Contact = () => {
   return (
     <section className="contact">
       <div className="contact__content">
-        <h2 className="contact__title">Contact</h2>
-        
+        <h2 className="contact__title">{t('contact.title')}</h2>
+
         <div className="contact__intro">
-          <p>Want to get in touch?</p>
-          <p>Fill out the form below and I'll get back to you as soon as possible.</p>
+          <p>{t('contact.intro')}</p>
+          <p>{t('contact.subtitle')}</p>
         </div>
 
         {!sent ? (
@@ -62,7 +64,7 @@ const Contact = () => {
               <input
                 type="text"
                 name="firstName"
-                placeholder="First Name"
+                placeholder={t('contact.form.firstName')}
                 value={formData.firstName}
                 onChange={handleChange}
                 required
@@ -71,7 +73,7 @@ const Contact = () => {
               <input
                 type="text"
                 name="lastName"
-                placeholder="Last Name"
+                placeholder={t('contact.form.lastName')}
                 value={formData.lastName}
                 onChange={handleChange}
                 className="form__input"
@@ -81,7 +83,7 @@ const Contact = () => {
             <input
               type="email"
               name="email"
-              placeholder="Email Address"
+              placeholder={t('contact.form.email')}
               value={formData.email}
               onChange={handleChange}
               required
@@ -90,7 +92,7 @@ const Contact = () => {
 
             <textarea
               name="message"
-              placeholder="Write your message here"
+              placeholder={t('contact.form.message')}
               value={formData.message}
               onChange={handleChange}
               required
@@ -104,19 +106,19 @@ const Contact = () => {
               disabled={loading}
             >
               <FiSend size={20} />
-              {loading ? 'Sending...' : 'Send'}
+              {loading ? t('contact.form.sending') : t('contact.form.send')}
             </button>
           </form>
         ) : (
           <div className="contact__success">
             <div className="success__icon">✓</div>
-            <h3>Message Sent!</h3>
-            <p>Thank you for reaching out. I'll get back to you soon.</p>
+            <h3>{t('contact.success.title')}</h3>
+            <p>{t('contact.success.message')}</p>
           </div>
         )}
 
         <div className="contact__divider">
-          <span>Or contact via</span>
+          <span>{t('contact.divider')}</span>
         </div>
 
         <a
@@ -126,7 +128,7 @@ const Contact = () => {
           className="contact__whatsapp"
         >
           <FiMessageCircle size={20} />
-          WhatsApp
+          {t('contact.whatsapp')}
         </a>
       </div>
     </section>

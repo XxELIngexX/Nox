@@ -1,0 +1,149 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Me",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "common": {
+    "readMore": "Read more",
+    "learnMore": "Learn more",
+    "viewAll": "View all",
+    "download": "Download",
+    "close": "Close",
+    "submit": "Submit",
+    "save": "Save",
+    "cancel": "Cancel",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "downloadCV": "Download CV",
+    "hireMe": "Hire me",
+    "getInTouch": "Get in touch"
+  },
+  "hero": {
+    "name": "Cesar Amaya Gomez",
+    "title": "Full-Stack Developer | Security-Oriented Thinker",
+    "description": "If you are looking for someone who combines technical knowledge with a proactive attitude and versatility, you have come to the right place."
+  },
+  "aboutMe": {
+    "title": "About Me",
+    "welcome": "It's always a pleasure to have visitors, so welcome.",
+    "intro": "I'm a Junior Full-Stack Developer with a strong interest in building well-structured and reliable systems. Over the past years, I've been growing in the world of software development by learning, experimenting, and building solutions that are not only functional, but designed to evolve and scale over time.",
+    "philosophy": "I see software engineering as a balance between creativity and strategy. Every project starts as a blank canvas, and before writing the first line of code, I like to think about architecture, workflows, potential risks, security considerations, and user experience. For me, writing code is not just about making things work, but about making them sustainable and safe.",
+    "passion": "I enjoy understanding how systems behave, how they can fail, and how to design them better from the beginning. That curiosity is what connects my interest in development with my growing passion for cybersecurity and defensive thinking.",
+    "closing": "Thanks for stopping by. If what you've seen resonates with you, I'd be glad to be part of your next project.",
+    "location": "Based in Colombia",
+    "age": "24 years old"
+  },
+  "cards": {
+    "skills": {
+      "title": "skills",
+      "description": "Learn about my skills in programming, find info on my language knowledge and more."
+    },
+    "experience": {
+      "title": "experience",
+      "description": "Get to know the timeline of my education and find out more about my working experience."
+    },
+    "projects": {
+      "title": "projects",
+      "description": "My portfolio is my biggest pride. Check my previous works and get to know my skills better."
+    },
+    "languages": {
+      "spanish": {
+        "title": "Spanish",
+        "description": "Native"
+      },
+      "english": {
+        "title": "English A2",
+        "description": "I read and write comfortably, and I'm actively improving my communication skills."
+      }
+    },
+    "learnMore": "Learn more"
+  },
+  "skills": {
+    "title": "Programming skills",
+    "description": "These are the tools I work with every day. I don't stick to any specific language or framework — I choose whatever fits the challenge best and push it as far as it needs to go. As a developer, I can pick up any technology because it's no longer just about writing functions; it's about understanding the logic, the flow, and how information moves through the system. Once you get that, everything else is just a matter of adaptation."
+  },
+  "languagesTitle": "Languages",
+  "experience": {
+    "title": "Experience",
+    "description": "From university life to operational management. Discover my experience timeline, focused on leadership, communication, and technology skills.",
+    "education": {
+      "title": "Education",
+      "university": "Escuela Colombiana de Ingenieria Julio Garavito University",
+      "universityDegree": "Systems Engineering",
+      "diploma": "Francisco Jose de Caldas District University",
+      "diplomaDegree": "Cybersecurity Diploma",
+      "highschool": "Gimnasio los Alerces",
+      "highschoolDegree": "High School Diploma"
+    },
+    "work": {
+      "title": "Work Experience",
+      "promoter": {
+        "title": "University Promoter",
+        "description": "Represented the university at events, handling internal logistics, guiding prospective students, and managing public interactions.",
+        "skills": ["Communication", "Adaptability", "Organization"]
+      },
+      "monitor": {
+        "title": "Academic Monitor",
+        "description": "Assisted students with logic, programming, and problem-solving. Provided personalized tutoring and academic support.",
+        "skills": ["Teaching", "Leadership", "Mentoring"]
+      },
+      "operations": {
+        "title": "Operations & Customer Service",
+        "description": "Roles in high-demand environments (waiter, assistant, operational support). Experience at: Café y Música Bar, Corparques, La Manrique.",
+        "skills": ["Pressure Handling", "Coordination", "Quick Resolution"]
+      }
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Explore my portfolio of work",
+    "versionsTitle": "Versions & Repositories",
+    "viewRepository": "View Repository"
+  },
+  "contact": {
+    "title": "Contact",
+    "intro": "Want to get in touch?",
+    "subtitle": "Fill out the form below and I'll get back to you as soon as possible.",
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email Address",
+      "message": "Write your message here",
+      "send": "Send",
+      "sending": "Sending..."
+    },
+    "success": {
+      "title": "Message Sent!",
+      "message": "Thank you for reaching out. I'll get back to you soon."
+    },
+    "divider": "Or contact via",
+    "whatsapp": "WhatsApp"
+  },
+  "footer": {
+    "brand": "Cesar Amaya",
+    "tagline": "Systems Engineer · Full Stack Developer",
+    "description": "Building innovative solutions with passion and precision.",
+    "quickLinks": "Quick Links",
+    "connect": "Connect",
+    "copyright": "Cesar Amaya. Made with",
+    "location": "in Bogotá, Colombia",
+    "backToTop": "Back to Top",
+    "links": {
+      "about": "About",
+      "skills": "Skills",
+      "experience": "Experience",
+      "projects": "Projects",
+      "contact": "Contact"
+    },
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Email"
+    }
+  }
+}

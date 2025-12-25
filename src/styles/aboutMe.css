@@ -1,7 +1,6 @@
 /* ================================================================
-   ABOUT ME - CONTENEDOR CLARO CON CONTRASTE
-   Usa: Variables globales de globals.css
-   Fondo: Blanco puro con paleta primaria/secundaria
+   ABOUT ME - CONTENEDOR CON SOPORTE DARK MODE COMPLETO
+   Usa variables de globals.css para máxima consistencia
 ================================================================ */
 
 .aboutMe {
@@ -11,28 +10,42 @@
     max-width: 85%;
     margin: 0 auto;
 
-    /* FONDO: Blanco puro - MÁXIMO CONTRASTE contra el dark theme */
+    /* TEMA CLARO */
     background: var(--color-surface-light);
     border-radius: var(--radius-xl);
-
-    /* SOMBRA: Profunda pero elegante, respeta la paleta */
-    box-shadow: 
-        0 8px 32px var(--color-primary-alpha-10),
-        var(--shadow-md);
-
-    /* BORDE: Línea sutil en primario para conectar con la paleta */
+    box-shadow: var(--shadow-primary);
     border: 1px solid var(--color-border-primary);
     
-    transition: all 0.4s ease;
+    transition: all var(--transition-base);
+}
+
+/* DARK MODE */
+@media (prefers-color-scheme: dark) {
+    .aboutMe {
+        background: rgba(30, 30, 37, 0.8);
+        border: 1px solid rgba(122, 92, 255, 0.3);
+        box-shadow: 
+            0 8px 32px rgba(122, 92, 255, 0.25),
+            0 4px 16px rgba(0, 0, 0, 0.4);
+    }
 }
 
 /* Hover: más presencia visual */
 .aboutMe:hover {
     box-shadow: 
         0 12px 48px var(--color-primary-alpha-20),
-        var(--shadow-lg);
+        0 6px 20px rgba(0, 0, 0, 0.12);
     border-color: var(--color-primary-alpha-30);
     transform: translateY(-4px);
+}
+
+@media (prefers-color-scheme: dark) {
+    .aboutMe:hover {
+        box-shadow: 
+            0 12px 48px rgba(122, 92, 255, 0.35),
+            0 6px 24px rgba(53, 107, 250, 0.2);
+        border-color: rgba(122, 92, 255, 0.5);
+    }
 }
 
 /* ================================================================
@@ -50,7 +63,7 @@
     font-weight: var(--font-weight-extrabold);
     line-height: var(--line-height-tight);
 
-    /* TÍTULO: Degradado primario → secundario (identidad visual) */
+    /* Degradado primario → secundario (identidad visual) */
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -66,7 +79,7 @@
 .text p {
     max-width: 50rem;
     
-    /* PÁRRAFOS: Negro suave para máxima legibilidad en fondo blanco */
+    /* TEMA CLARO: Negro suave para máxima legibilidad */
     color: var(--color-text-primary);
     font-size: var(--font-size-base);
     line-height: var(--line-height-relaxed);
@@ -76,6 +89,17 @@
     padding: 0;
 
     transition: color var(--transition-base);
+}
+
+/* DARK MODE - Texto claro */
+@media (prefers-color-scheme: dark) {
+    .text p {
+        color: rgba(240, 244, 248, 0.9);
+    }
+    
+    .text p:hover {
+        color: var(--color-primary-light);
+    }
 }
 
 .text p:hover {
@@ -98,11 +122,8 @@
 .photo h3 {
     font-size: var(--font-size-xl);
     font-weight: var(--font-weight-bold);
-
-    /* Usa el primario */
     color: var(--color-primary);
-    margin-bottom: 0.2rem;
-
+    margin-bottom: var(--spacing-xs);
     transition: color var(--transition-base);
 }
 
@@ -111,12 +132,18 @@
 }
 
 .photo p {
-    /* Gris medio oscuro */
     color: var(--color-text-secondary);
     font-weight: var(--font-weight-semibold);
     margin-bottom: var(--spacing-sm);
     font-size: var(--font-size-sm);
     letter-spacing: var(--letter-spacing-wide);
+}
+
+/* DARK MODE - Texto secundario más visible */
+@media (prefers-color-scheme: dark) {
+    .photo p {
+        color: rgba(203, 213, 225, 0.8);
+    }
 }
 
 /* ================================================================
@@ -128,18 +155,24 @@
     object-fit: cover;
     border-radius: var(--radius-full);
 
-    /* BORDE GRADIENTE: Utiliza primario + acento */
+    /* BORDE GRADIENTE - Tema claro */
     border: 4px solid transparent;
-    background: 
-        linear-gradient(var(--color-surface-light), var(--color-surface-light)) padding-box,
-        linear-gradient(135deg, var(--color-primary), var(--color-accent)) border-box;
+    background: linear-gradient(var(--color-surface-light), var(--color-surface-light)) padding-box,
+                var(--gradient-secondary) border-box;
 
-    /* SOMBRA: Tonalidad azul para presencia */
-    box-shadow: 
-        0 8px 32px var(--color-primary-alpha-20),
-        var(--shadow-md);
+    box-shadow: var(--shadow-primary);
+    transition: all var(--transition-base);
+}
 
-    transition: all 0.4s ease;
+/* DARK MODE - Ajustar fondo del borde */
+@media (prefers-color-scheme: dark) {
+    .hero_profile-pic {
+        background: linear-gradient(rgba(30, 30, 37, 0.8), rgba(30, 30, 37, 0.8)) padding-box,
+                    var(--gradient-secondary) border-box;
+        box-shadow: 
+            0 8px 32px rgba(122, 92, 255, 0.3),
+            0 4px 16px rgba(0, 0, 0, 0.4);
+    }
 }
 
 .hero_profile-pic:hover {
@@ -149,16 +182,24 @@
         0 6px 24px var(--color-secondary-alpha-20);
 }
 
+@media (prefers-color-scheme: dark) {
+    .hero_profile-pic:hover {
+        box-shadow: 
+            0 12px 48px rgba(122, 92, 255, 0.4),
+            0 6px 24px rgba(69, 230, 184, 0.3);
+    }
+}
+
 /* ================================================================
    RESPONSIVE
 ================================================================ */
 @media (max-width: 900px) {
     .aboutMe {
         flex-direction: column;
-        gap: var(--spacing-2xl);
+        gap: 2rem;
         max-width: 95%;
         text-align: center;
-        padding: var(--spacing-3xl) var(--spacing-2xl);
+        padding: 3rem 2rem;
     }
 
     .text h1 {
@@ -179,7 +220,7 @@
 
 @media (max-width: 600px) {
     .aboutMe {
-        padding: var(--spacing-2xl) var(--spacing-lg);
+        padding: 2rem 1.5rem;
         gap: var(--spacing-lg);
     }
 

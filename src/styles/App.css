@@ -1,0 +1,130 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   SPLIT - FORZAR ROW EN DESKTOP
+========================================================= */
+.split {
+  background: rgba(26, 37, 71, 0.55);
+  backdrop-filter: blur(12px);
+
+  display: flex !important;
+  flex-direction: row !important;  /* ← FORZAR ROW con !important */
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 45px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 25px rgba(0, 217, 255, 0.14);
+
+  min-height: 25rem;
+  padding: 2rem 1rem;
+}
+
+#portafolio {
+  max-height: 8rem;
+  display: flex;
+  align-items: center;
+  background: rgb(52, 55, 120);
+}
+
+h1 {
+  font-size: 3rem;
+  padding: 10px;
+
+  line-height: 1.6;
+  color: rgba(234, 252, 255, 0.88);
+  padding: 0.9rem 1rem;
+  border-radius: 0.75rem;
+}
+
+h3 {
+  font-size: 2rem;
+  padding: 1rem;
+  line-height: 1.4;
+  color: rgba(234, 252, 255, 0.88);
+  text-align: center;
+}
+
+/* =========================================================
+   RESPONSIVE STYLES
+========================================================= */
+@media (max-width: 992px) {
+  .split {
+    flex-direction: column !important;  /* ← FORZAR COLUMN en tablet */
+    gap: 35px;
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .split {
+    gap: 30px;
+    padding: 1.5rem 1rem;
+    min-height: auto;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .split {
+    gap: 20px;
+    padding: 1rem 0.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    padding: 0.7rem 0.8rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    padding: 0.75rem;
+  }
+}

@@ -1,0 +1,256 @@
+/* ===== LANGUAGE SELECTOR DROPDOWN CON BANDERAS SVG ===== */
+.language-selector-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* ===== FLAG ICONS ===== */
+.flag-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* ===== BOTÓN PRINCIPAL ===== */
+.language-selector__button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--color-surface-light);
+  border: 2px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  min-width: 100px;
+}
+
+.language-selector__button:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-alpha-10);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--color-primary-alpha-20);
+}
+
+/* Círculo de la bandera en el botón */
+.language-selector__flag-circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2px solid var(--color-border-medium);
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.language-selector__code {
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
+}
+
+.language-selector__arrow {
+  transition: transform var(--transition-base);
+  color: var(--color-text-secondary);
+  margin-left: auto;
+}
+
+.language-selector__arrow.open {
+  transform: rotate(180deg);
+}
+
+/* ===== DROPDOWN MENU ===== */
+.language-selector__dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  min-width: 180px;
+  background: var(--color-surface-light);
+  border: 2px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.12),
+    0 4px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  z-index: 1000;
+  animation: dropdownSlideIn 0.2s ease;
+}
+
+@keyframes dropdownSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== OPCIÓN DEL DROPDOWN ===== */
+.language-selector__option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+  text-align: left;
+}
+
+.language-selector__option:hover {
+  background: var(--color-primary-alpha-10);
+}
+
+.language-selector__option.active {
+  background: var(--color-primary-alpha-20);
+  color: var(--color-primary);
+}
+
+/* Círculo de la bandera en las opciones */
+.language-selector__option-flag-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2px solid var(--color-border-medium);
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.language-selector__option-name {
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+.language-selector__check {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+/* ===== DARK MODE ===== */
+@media (prefers-color-scheme: dark) {
+  .language-selector__button {
+    background: rgba(30, 30, 37, 0.8);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: var(--color-text-on-dark);
+  }
+
+  .language-selector__button:hover {
+    background: rgba(53, 107, 250, 0.15);
+    border-color: var(--color-primary-light);
+  }
+
+  .language-selector__dropdown {
+    background: rgba(30, 30, 37, 0.95);
+    border-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+  }
+
+  .language-selector__option {
+    color: var(--color-text-on-dark);
+  }
+
+  .language-selector__option:hover {
+    background: rgba(53, 107, 250, 0.15);
+  }
+
+  .language-selector__option.active {
+    background: rgba(53, 107, 250, 0.25);
+    color: var(--color-primary-light);
+  }
+
+  .language-selector__flag-circle,
+  .language-selector__option-flag-circle {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .language-selector__button {
+    padding: 0.45rem 0.65rem;
+    min-width: 90px;
+  }
+
+  .language-selector__flag-circle {
+    width: 22px;
+    height: 22px;
+  }
+
+  .language-selector__code {
+    font-size: 0.8rem;
+  }
+
+  .language-selector__dropdown {
+    min-width: 160px;
+  }
+
+  .language-selector__option {
+    padding: 0.65rem 0.875rem;
+  }
+
+  .language-selector__option-flag-circle {
+    width: 26px;
+    height: 26px;
+  }
+
+  .language-selector__option-name {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .language-selector__button {
+    padding: 0.4rem 0.6rem;
+    min-width: 85px;
+  }
+
+  .language-selector__flag-circle {
+    width: 20px;
+    height: 20px;
+  }
+
+  .language-selector__code {
+    font-size: 0.75rem;
+  }
+
+  .language-selector__dropdown {
+    min-width: 150px;
+  }
+
+  .language-selector__option-flag-circle {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* ===== ACCESIBILIDAD ===== */
+@media (prefers-reduced-motion: reduce) {
+  .language-selector__button,
+  .language-selector__arrow,
+  .language-selector__option {
+    transition: none;
+  }
+
+  .language-selector__dropdown {
+    animation: none;
+  }
+
+  .language-selector__button:hover {
+    transform: none;
+  }
+}

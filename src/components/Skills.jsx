@@ -1,10 +1,12 @@
 import "../styles/skills.css";
+import { useTranslation } from 'react-i18next';
+
 export const Skills = () => {
+  const { t } = useTranslation();
+  
   return (
     <section className="skills">
-      <h2 className="skills__title">Programming skills</h2>
-
-
+      <h2 className="skills__title">{t('skills.title')}</h2>
 
       <div id="skills" className="skills__container">
         <img
@@ -13,9 +15,8 @@ export const Skills = () => {
           className="skills__image"
         />
         <p className="skills__description">
-        These are the tools I work with every day. I don’t stick to any specific language or framework — I choose whatever fits the challenge best and push it as far as it needs to go. As a developer, I can pick up any technology because it’s no longer just about writing functions; it’s about understanding the logic, the flow, and how information moves through the system. Once you get that, everything else is just a matter of adaptation.
+          {t('skills.description')}
         </p>
-
       </div>
     </section>
   );

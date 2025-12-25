@@ -1,8 +1,11 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import ProjectCard from './ProjectCard';
 import '../styles/projects.css';
 
 const Projects = () => {
+    const { t } = useTranslation();
+    
     const projectsData = [
         {
             id: 1,
@@ -72,13 +75,13 @@ const Projects = () => {
 
     return(
         <section id='projects' className='projects-container'>
-            {/* HEADER - Dark tones */}
+            {/* HEADER */}
             <div className='projects__header'>
-                <h2 className='projects__title'>Projects</h2>
-                <p className='projects__subtitle'>Explore my portfolio of work</p>
+                <h2 className='projects__title'>{t('projects.title')}</h2>
+                <p className='projects__subtitle'>{t('projects.subtitle')}</p>
             </div>
 
-            {/* CONTENT - Light tones */}
+            {/* CONTENT */}
             <div className='projects__content'>
                 {projectsData.map((project) => (
                     <ProjectCard
