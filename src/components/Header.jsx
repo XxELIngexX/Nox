@@ -83,7 +83,6 @@ export const Header = () => {
                 <ul className="sidebar_menu">
                     <li><Link to="aboutMe" smooth duration={500} onClick={() => setMenuOpen(false)}>About Me</Link></li>
                     <li><Link to="skills" smooth duration={500} onClick={() => setMenuOpen(false)}>Skills</Link></li>
-                    <li><Link to="hobbies" smooth duration={500} onClick={() => setMenuOpen(false)}>Hobbies</Link></li>
                     <li><Link to="projects" smooth duration={500} onClick={() => setMenuOpen(false)}>Projects</Link></li>
                     <li><Link to="contact" smooth duration={500} onClick={() => setMenuOpen(false)}>Contact</Link></li>
                 </ul>
