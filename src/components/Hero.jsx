@@ -17,7 +17,7 @@ export const Hero = () => {
                     <a href="https://www.linkedin.com/in/cesar-amaya-gomez/" className="social-button" id="hero_linkedin-button">
                         <FaLinkedin size={24} />
                     </a>
-                    <a href="/cv.pdf" className="social-button" id="hero_resume-button" target="_blank" rel="noopener noreferrer">
+                    <a href="/cv-en.pdf" className="social-button" id="hero_resume-button" target="_blank" rel="noopener noreferrer">
                         <HiOutlineDocumentDownload size={24} />
                     </a>
                 </div>
