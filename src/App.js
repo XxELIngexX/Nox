@@ -8,8 +8,8 @@ import Skills from './components/Skills';
 import Card from './components/separador/card';
 import Experience from './components/Experience';
 import Projects from './components/Projects.jsx';
- import Contact from './components/Contact';
-// import Footer from './components/Footer';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 // import ScrollToTop from './components/ScrollToTop';
 function App() {
  
@@ -65,8 +65,8 @@ function App() {
   
       <Projects />
       <Contact />
-      {/*<Footer />
-      <ScrollToTop /> */}
+      <Footer />
+      {/* <ScrollToTop /> */}
     </>
   );
 }
