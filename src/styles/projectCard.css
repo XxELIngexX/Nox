@@ -40,11 +40,11 @@
     }
 }
 
-/* ===== PROJECT IMAGE ===== */
+/* ===== PROJECT IMAGE - ALTURA REDUCIDA Y MEJOR AJUSTE ===== */
 .project-card__image {
     position: relative;
     width: 100%;
-    height: 240px;
+    height: 160px; /* Reducido de 240px a 160px */
     overflow: hidden;
     background: var(--color-bg-primary);
 }
@@ -59,12 +59,23 @@
 .project-card__image-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* Cambiado de 'cover' a 'contain' para que la imagen completa sea visible */
+    object-position: center; /* Centrar la imagen */
     transition: transform var(--transition-base);
-}
+    padding: 0.5rem; /* Añadir un poco de padding para que no toque los bordes */
+
+
+/* Si prefieres que las imágenes llenen el espacio pero se vean completas: */
+/* .project-card__image-img {
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down; /* Escala hacia abajo si es necesario, pero mantiene proporciones */
+    object-position: center;
+    transition: transform var(--transition-base);
+} */
 
 .project-card:hover .project-card__image-img {
-    transform: scale(1.08);
+    transform: scale(1.05); /* Reducido de 1.08 a 1.05 para un efecto más sutil */
 }
 
 /* ===== INFO SECTION ===== */
@@ -391,10 +402,10 @@
     box-shadow: var(--glow-accent);
 }
 
-/* ===== RESPONSIVIDAD ===== */
+/* ===== RESPONSIVIDAD - ALTURAS AJUSTADAS ===== */
 @media (max-width: 992px) {
     .project-card__image {
-        height: 220px;
+        height: 150px; /* Reducido de 220px */
     }
 
     .project-card__info {
@@ -416,7 +427,7 @@
     }
 
     .project-card__image {
-        height: 200px;
+        height: 140px; /* Reducido de 200px */
     }
 
     .project-card__info {
@@ -440,7 +451,7 @@
     }
 
     .project-card__image {
-        height: 180px;
+        height: 120px; /* Reducido de 180px */
     }
 
     .project-card__info {

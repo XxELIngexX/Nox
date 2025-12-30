@@ -103,7 +103,161 @@
     "title": "Projects",
     "subtitle": "Explore my portfolio of work",
     "versionsTitle": "Versions & Repositories",
-    "viewRepository": "View Repository"
+    "viewRepository": "View Repository",
+    "projectsList": {
+      "econexion": {
+        "title": "ECONEXION",
+        "description": "Full-stack platform designed to connect companies and users in the circular economy ecosystem. The system facilitates resource management, material exchange, and tracking of sustainable initiatives, promoting environmentally responsible practices.",
+        "versions": {
+          "organization": {
+            "name": "Organization Repository",
+            "description": "Contains the project's overall vision, documentation, and coordination between different system components. Serves as the central point for collaboration and development management."
+          },
+          "frontend": {
+            "name": "Frontend",
+            "description": "Modern and responsive user interface built with React. Provides an intuitive experience for navigation, profile management, resource posting, and environmental impact metrics visualization."
+          },
+          "backend": {
+            "name": "Backend",
+            "description": "Robust API that handles business logic, authentication, user management, and transactions. Implements scalable architecture with security best practices and data persistence."
+          },
+          "econexia": {
+            "name": "Econexia - Frontend (React + Apache)",
+            "description": "React-based user interface deployed on Apache with Let's Encrypt SSL. Features intuitive marketplace experience, real-time chat via Socket.io, dashboard with statistics, and secure HTTPS communication with backend."
+          }
+        }
+      },
+      "santaSecreto": {
+        "title": "Santa Secreto",
+        "description": "Professional secret santa raffle platform designed for groups to easily manage gift exchanges. Users create private rooms with unique invitation codes, add participants, and perform secure draws without exposing participant information. Built with modern tech stack emphasizing security, scalability, and user experience. Features role-based access control (room owner vs guests), automatic room expiration, and comprehensive audit logging. Implements professional best practices including JWT authentication, input validation, rate limiting, and GDPR compliance considerations.",
+        "versions": {
+          "frontend": {
+            "name": "Frontend (React + Vite)",
+            "description": "Modern React 18+ interface built with Vite for optimal development experience. Features responsive design with Tailwind CSS and Shadcn/ui components. State management via Zustand, form validation with Zod, and HTTP requests through Axios. Supports room creation, participant management, invitation sharing via QR codes, and real-time draw visualization. Fully responsive across all devices with accessibility considerations."
+          },
+          "backend": {
+            "name": "Backend (Express + Prisma)",
+            "description": "RESTful API built with Express.js and Prisma ORM for type-safe database operations. Implements JWT-based authentication, role-based authorization, and comprehensive input validation. Features secure room management with unique invitation codes, participant handling, and draw algorithm. Includes audit logging, rate limiting, CORS configuration, and error handling middleware. Uses PostgreSQL for persistent storage with automated migrations."
+          }
+        }
+      },
+      "propertyManager": {
+        "title": "Property Manager",
+        "description": "Complete CRUD system for managing real estate properties with a microservices architecture deployed on AWS. Features user registration, property management (address, price, size, description), and a three-tier distributed architecture separating frontend, backend, and database across different AWS EC2 instances. Demonstrates containerization with Docker, secure inter-service communication over private AWS networks, and RESTful API design with Spring Boot and JPA/Hibernate for data persistence.",
+        "versions": {
+          "frontend": {
+            "name": "Frontend Layer",
+            "description": "HTML and JavaScript user interface running in a Docker container. Provides forms for user registration and property management with client-side validations. Makes fetch() calls to the REST API backend deployed on AWS. Includes interactive UI for creating, reading, updating, and deleting property listings."
+          },
+          "backend": {
+            "name": "Backend Service",
+            "description": "Spring Boot REST API running in Docker on AWS EC2. Exposes RESTful endpoints for CRUD operations on users and properties. Handles JSON serialization/deserialization to POJOs. Uses JPA/Hibernate for database persistence. Communicates securely with MySQL database over AWS private network. Implements complete business logic for property and user management."
+          },
+          "database": {
+            "name": "Database Layer",
+            "description": "MySQL database running in Docker on a dedicated AWS EC2 instance. Stores user information and property data (address, price, size, description) across two main tables. Only accessible from the backend service via AWS private network for enhanced security. Ensures data persistence and separation of concerns in the microservices architecture."
+          }
+        }
+      },
+      "twitteerCopy": {
+        "title": "TwitteerCopy",
+        "description": "Serverless microblogging platform inspired by Twitter. Users can register, authenticate securely via AWS Cognito, and publish messages up to 140 characters. Implements a scalable microservices architecture using AWS Lambda functions with JWT authentication. Features real-time feed display, user profile management, and OAuth 2.0 authentication flow. Demonstrates cloud-native development with minimal operational overhead.",
+        "versions": {
+          "frontend": {
+            "name": "Frontend (JavaScript + GitHub Pages)",
+            "description": "JavaScript vanilla frontend deployed on GitHub Pages. Handles user authentication via AWS Cognito OAuth 2.0 flow, displays microblog feed, and manages user profiles. Features JWT token storage and secure API communication with backend Lambda functions. Provides intuitive interface for composing posts (max 140 characters) and viewing community feed."
+          },
+          "backend": {
+            "name": "Backend (AWS Lambda Microservices)",
+            "description": "Serverless backend using AWS Lambda functions with API Gateway. Three independent microservices: Users service (authentication, profile management), Posts service (CRUD operations with 140-char validation), and Stream service (feed aggregation and sorting). Integrates with AWS Cognito for JWT validation and DynamoDB/PostgreSQL for data persistence. Implements complete OAuth 2.0 authentication flow."
+          }
+        }
+      },
+      "sistemaVotacion": {
+        "title": "SistemaVotacion-BAIA",
+        "description": "Decentralized electronic voting system built on blockchain technology using Ethereum smart contracts. Implements transparent, immutable, and tamper-proof voting mechanism where each voter can vote only once, votes are recorded permanently on-chain, and results are publicly verifiable. Features a Solidity-based smart contract for vote registration and management, Hardhat development environment for compilation and deployment, and a web frontend for user interaction with the blockchain. Demonstrates core DApp concepts including wallet integration, smart contract interaction, and decentralized governance principles.",
+        "versions": {
+          "smartContracts": {
+            "name": "Smart Contracts (Solidity)",
+            "description": "Ethereum smart contracts written in Solidity implementing voting logic. Features include voter registration, candidate/option management, one-vote-per-address enforcement, immutable vote recording, and transparent result queries. Contracts are compiled and deployed using Hardhat, with automated testing and deployment scripts. Demonstrates secure blockchain programming patterns and gas optimization."
+          },
+          "frontend": {
+            "name": "Frontend DApp Interface",
+            "description": "Web-based user interface for interacting with the voting smart contract. Built with JavaScript, HTML, and CSS, featuring MetaMask wallet integration for authentication. Allows users to connect their Web3 wallet, view candidates, cast votes, and check real-time results. Uses ethers.js to communicate with the deployed contract on the blockchain. Provides transparent visualization of voting state and results stored on-chain."
+          }
+        }
+      },
+      "evacuacion": {
+        "title": "Multi-Agent Evacuation Simulation",
+        "description": "Agent-based simulation system for modeling evacuation processes in emergency scenarios. Uses autonomous agents to represent individuals evacuating from buildings or enclosed spaces, studying collective behavior under stress, congestion, and panic. The simulation evaluates evacuation times, escape routes, and safety protocols through complex interactions between agents and their environment. Demonstrates multi-agent systems (MAS) applied to real-world safety scenarios, featuring different agent roles (evacuees and brigade members), decision-making algorithms, and behavioral rules that generate emergent collective phenomena like bottlenecks and crowd dynamics.",
+        "versions": {
+          "core": {
+            "name": "Core Simulation Engine",
+            "description": "Python-based multi-agent simulation framework implementing autonomous agent behavior for evacuation scenarios. Features agent perception of environment, decision-making based on behavioral rules, and agent-environment-agent interactions. The main simulation loop in main.py orchestrates agent creation, environment setup, and execution cycles. Supports different agent types including evacuees and brigade members with distinct behavioral patterns and objectives."
+          },
+          "models": {
+            "name": "Agent & Environment Models",
+            "description": "Modular architecture defining agents, environment, and interaction rules. The model/ folder contains classes for agent types, spatial environment representation, movement algorithms, and evacuation route logic. Esqueleto.py provides base templates for agent classes and common functionality inheritance. Implements rules for crowd dynamics, bottleneck formation, and emergency response behaviors. Enables experimentation with different evacuation strategies and safety protocols."
+          }
+        }
+      },
+      "fastfoodie": {
+        "title": "FASTFOODIE",
+        "description": "Progressive backend project focused on developing a web application for fast-food order management, built following distributed architecture principles and software engineering best practices. Throughout the repositories, you can see the system's evolution from a simple functional base to a more structured, scalable solution aligned with modern standards.",
+        "versions": {
+          "phase1": {
+            "name": "Phase 1: REST Server",
+            "description": "Functional system foundation. Implementation of a web server capable of handling HTTP requests and exposing REST services. Establishes the foundation for order resource management."
+          },
+          "phase2": {
+            "name": "Phase 2: MVC Architecture",
+            "description": "Evolution towards a more structured solution. Implements responsibility decoupling with controllers, services, and models. Proper handling of routes and client-server communication."
+          },
+          "phase3": {
+            "name": "Phase 3: Authentication and Security",
+            "description": "Robust and scalable solution. Integration of session management, user authentication, and access control. Application of modern web security standards."
+          }
+        }
+      },
+      "cesarShop": {
+        "title": "Cesar's Shop",
+        "description": "Progressive framework project that demonstrates the evolution of a lightweight web server from basic HTTP handling to a complete IoC framework inspired by Spring Boot. Built a fully functional online store for product management, showcasing server-side architecture evolution, annotation-based endpoint configuration, and cloud deployment. The project progresses through four phases: static file serving, REST services with lambdas, IoC framework with annotations (@RestController, @GetMapping, @PostMapping, @DeleteMapping), and finally containerization with Docker and AWS cloud deployment.",
+        "versions": {
+          "phase3": {
+            "name": "Phase 3: IoC Framework with Annotations",
+            "description": "Transformation into an IoC framework inspired by Spring Boot. Supports POJOs with @RestController annotations, endpoint definitions with @GetMapping, @PostMapping, @DeleteMapping. Handles query parameters with @RequestParam and JSON data reception with @RequestBody. Includes a fully functional online store UI for product management (create, list, delete products). Features automated JUnit tests validating REST endpoints and framework functionality."
+          },
+          "phase4": {
+            "name": "Phase 4: Docker & AWS Cloud Deployment",
+            "description": "Evolution to cloud-ready solution. Adds Docker containerization configuration for the entire project. Deploys the application on AWS cloud infrastructure. Enables building complete web applications using only POJOs with annotations, without manual route or service configuration. Includes video evidence of successful cloud deployment and live application access."
+          }
+        }
+      },
+      "cesarflix": {
+        "title": "CesarFlix",
+        "description": "Netflix-inspired streaming platform clone built with React as a Single Page Application (SPA). Designed as a comprehensive learning project for mastering React fundamentals including component architecture, routing, state management, and API consumption. Features a catalog-style interface for browsing movies and series, detail views, and navigation similar to modern streaming platforms. Uses json-server to simulate a REST API backend, enabling realistic data fetching without a full backend implementation. Serves as an excellent practice project for understanding real-world frontend development patterns, reusable component design, and HTTP request handling in React applications.",
+        "versions": {
+          "frontend": {
+            "name": "Frontend Application (React SPA)",
+            "description": "React-based single page application featuring streaming platform UI/UX patterns. Implements component-based architecture with public/ and src/ folder structure typical of create-react-app or Vite projects. Features include: content catalog display with card layouts, navigation between sections (home, content details), routing for different views, state management with React hooks, and HTTP requests using fetch/axios. Demonstrates practical React patterns for building scalable applications including reusable components, component composition, and modern JavaScript/CSS styling."
+          },
+          "backend": {
+            "name": "Mock Backend (json-server)",
+            "description": "Simulated REST API using json-server with db.json file containing mock data for movies, series, and streaming content. Runs locally on port 5000 (npx json-server db.json --port 5000) to provide realistic API endpoints for the frontend. Enables development and testing of API consumption patterns without implementing a full backend. Demonstrates how to structure data for RESTful services and practice asynchronous data fetching in frontend applications. Perfect for learning API integration before moving to production backends."
+          }
+        }
+      },
+      "secureText": {
+        "title": "SecureText",
+        "description": "Web application for encrypting and decrypting text using vowel-based substitution cipher rules. Enables users to exchange secret messages through a specific character conversion system where each vowel is replaced with a unique character string. Features smart decryption detection that only enables the decrypt button when encrypted patterns are identified in the input text. Built as a practical demonstration of string manipulation algorithms and basic cryptography concepts, with clipboard integration for easy message sharing.",
+        "versions": {
+          "main": {
+            "name": "Main Application",
+            "description": "Single-page web application implementing vowel-based encryption/decryption algorithm. Features include: bidirectional text transformation (encrypt/decrypt), intelligent decryption button activation based on pattern detection, clipboard copy functionality emulating Ctrl+C behavior, and real-time text processing. Encryption rules: 'e' → 'enter', 'i' → 'imes', 'a' → 'ai', 'o' → 'ober', 'u' → 'ufat'. Example: 'gato' becomes 'gaitober'. Developed using agile methodology with Trello board management (Ready to Start, In Development, Paused, Completed). Clean, responsive UI with HTML/CSS and vanilla JavaScript logic for string manipulation."
+          }
+        }
+      }
+    }
   },
   "contact": {
     "title": "Contact",

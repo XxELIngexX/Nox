@@ -103,7 +103,161 @@
     "title": "Projetos",
     "subtitle": "Explore meu portfólio",
     "versionsTitle": "Versões e Repositórios",
-    "viewRepository": "Ver Repositório"
+    "viewRepository": "Ver Repositório",
+    "projectsList": {
+      "econexion": {
+        "title": "ECONEXION",
+        "description": "Plataforma full-stack projetada para conectar empresas e usuários no ecossistema de economia circular. O sistema facilita a gestão de recursos, troca de materiais e rastreamento de iniciativas sustentáveis, promovendo práticas ambientalmente responsáveis.",
+        "versions": {
+          "organization": {
+            "name": "Repositório da Organização",
+            "description": "Contém a visão geral do projeto, documentação e coordenação entre os diferentes componentes do sistema. Serve como ponto central para colaboração e gestão de desenvolvimento."
+          },
+          "frontend": {
+            "name": "Frontend",
+            "description": "Interface de usuário moderna e responsiva construída com React. Oferece uma experiência intuitiva para navegação, gestão de perfil, publicação de recursos e visualização de métricas de impacto ambiental."
+          },
+          "backend": {
+            "name": "Backend",
+            "description": "API robusta que gerencia a lógica de negócios, autenticação, gestão de usuários e transações. Implementa arquitetura escalável com melhores práticas de segurança e persistência de dados."
+          },
+          "econexia": {
+            "name": "Econexia - Frontend (React + Apache)",
+            "description": "Interface de usuário baseada em React implantada no Apache com SSL Let's Encrypt. Apresenta experiência de marketplace intuitiva, chat em tempo real via Socket.io, painel com estatísticas e comunicação HTTPS segura com o backend."
+          }
+        }
+      },
+      "santaSecreto": {
+        "title": "Santa Secreto",
+        "description": "Plataforma profissional de sorteio de amigo secreto projetada para que grupos gerenciem facilmente trocas de presentes. Usuários criam salas privadas com códigos de convite únicos, adicionam participantes e realizam sorteios seguros sem expor informações dos participantes. Construída com stack tecnológica moderna enfatizando segurança, escalabilidade e experiência do usuário. Apresenta controle de acesso baseado em funções (proprietário da sala vs convidados), expiração automática de salas e registro de auditoria completo. Implementa melhores práticas profissionais incluindo autenticação JWT, validação de entradas, limitação de taxa e considerações de conformidade GDPR.",
+        "versions": {
+          "frontend": {
+            "name": "Frontend (React + Vite)",
+            "description": "Interface React 18+ moderna construída com Vite para experiência de desenvolvimento ideal. Apresenta design responsivo com Tailwind CSS e componentes Shadcn/ui. Gestão de estado via Zustand, validação de formulários com Zod e requisições HTTP via Axios. Suporta criação de salas, gestão de participantes, compartilhamento de convites via códigos QR e visualização de sorteio em tempo real. Totalmente responsivo em todos os dispositivos com considerações de acessibilidade."
+          },
+          "backend": {
+            "name": "Backend (Express + Prisma)",
+            "description": "API RESTful construída com Express.js e Prisma ORM para operações de banco de dados type-safe. Implementa autenticação baseada em JWT, autorização baseada em funções e validação completa de entradas. Apresenta gestão segura de salas com códigos de convite únicos, tratamento de participantes e algoritmo de sorteio. Inclui registro de auditoria, limitação de taxa, configuração CORS e middleware de tratamento de erros. Usa PostgreSQL para armazenamento persistente com migrações automatizadas."
+          }
+        }
+      },
+      "propertyManager": {
+        "title": "Property Manager",
+        "description": "Sistema CRUD completo para gerenciar propriedades imobiliárias com arquitetura de microsserviços implantada na AWS. Apresenta registro de usuários, gestão de propriedades (endereço, preço, tamanho, descrição) e arquitetura distribuída de três camadas separando frontend, backend e banco de dados em diferentes instâncias AWS EC2. Demonstra conteinerização com Docker, comunicação segura entre serviços em redes privadas AWS e design de API RESTful com Spring Boot e JPA/Hibernate para persistência de dados.",
+        "versions": {
+          "frontend": {
+            "name": "Camada Frontend",
+            "description": "Interface de usuário HTML e JavaScript executando em contêiner Docker. Fornece formulários para registro de usuários e gestão de propriedades com validações do lado do cliente. Realiza chamadas fetch() para o backend API REST implantado na AWS. Inclui UI interativa para criar, ler, atualizar e excluir listagens de propriedades."
+          },
+          "backend": {
+            "name": "Serviço Backend",
+            "description": "API REST Spring Boot executando em Docker na AWS EC2. Expõe endpoints RESTful para operações CRUD em usuários e propriedades. Gerencia serialização/desserialização JSON para POJOs. Usa JPA/Hibernate para persistência de banco de dados. Comunica-se de forma segura com banco de dados MySQL em rede privada AWS. Implementa lógica de negócios completa para gestão de propriedades e usuários."
+          },
+          "database": {
+            "name": "Camada de Banco de Dados",
+            "description": "Banco de dados MySQL executando em Docker em instância AWS EC2 dedicada. Armazena informações de usuários e dados de propriedades (endereço, preço, tamanho, descrição) em duas tabelas principais. Acessível apenas do serviço backend via rede privada AWS para segurança aprimorada. Garante persistência de dados e separação de responsabilidades na arquitetura de microsserviços."
+          }
+        }
+      },
+      "twitteerCopy": {
+        "title": "TwitteerCopy",
+        "description": "Plataforma de microblog serverless inspirada no Twitter. Usuários podem se registrar, autenticar-se com segurança via AWS Cognito e publicar mensagens de até 140 caracteres. Implementa arquitetura de microsserviços escalável usando funções AWS Lambda com autenticação JWT. Apresenta exibição de feed em tempo real, gestão de perfis de usuário e fluxo de autenticação OAuth 2.0. Demonstra desenvolvimento nativo em nuvem com sobrecarga operacional mínima.",
+        "versions": {
+          "frontend": {
+            "name": "Frontend (JavaScript + GitHub Pages)",
+            "description": "Frontend vanilla JavaScript implantado no GitHub Pages. Gerencia autenticação de usuário via fluxo OAuth 2.0 AWS Cognito, exibe feed de microblog e gerencia perfis de usuário. Apresenta armazenamento de tokens JWT e comunicação API segura com funções Lambda do backend. Fornece interface intuitiva para compor posts (máx. 140 caracteres) e visualizar feed da comunidade."
+          },
+          "backend": {
+            "name": "Backend (Microsserviços AWS Lambda)",
+            "description": "Backend serverless usando funções AWS Lambda com API Gateway. Três microsserviços independentes: serviço de Usuários (autenticação, gestão de perfis), serviço de Posts (operações CRUD com validação de 140 caracteres) e serviço de Stream (agregação e ordenação de feed). Integra-se com AWS Cognito para validação JWT e DynamoDB/PostgreSQL para persistência de dados. Implementa fluxo completo de autenticação OAuth 2.0."
+          }
+        }
+      },
+      "sistemaVotacion": {
+        "title": "SistemaVotacion-BAIA",
+        "description": "Sistema de votação eletrônica descentralizado construído em tecnologia blockchain usando contratos inteligentes Ethereum. Implementa mecanismo de votação transparente, imutável e à prova de adulteração onde cada eleitor pode votar apenas uma vez, votos são registrados permanentemente na cadeia e resultados são publicamente verificáveis. Apresenta contrato inteligente baseado em Solidity para registro e gestão de votos, ambiente de desenvolvimento Hardhat para compilação e implantação, e frontend web para interação do usuário com a blockchain. Demonstra conceitos centrais de DApp incluindo integração de carteira, interação com contratos inteligentes e princípios de governança descentralizada.",
+        "versions": {
+          "smartContracts": {
+            "name": "Contratos Inteligentes (Solidity)",
+            "description": "Contratos inteligentes Ethereum escritos em Solidity implementando lógica de votação. Recursos incluem registro de eleitores, gestão de candidatos/opções, aplicação de um-voto-por-endereço, registro imutável de votos e consultas de resultados transparentes. Contratos são compilados e implantados usando Hardhat, com scripts de teste e implantação automatizados. Demonstra padrões de programação blockchain seguros e otimização de gás."
+          },
+          "frontend": {
+            "name": "Interface DApp Frontend",
+            "description": "Interface de usuário baseada na web para interagir com o contrato inteligente de votação. Construída com JavaScript, HTML e CSS, apresentando integração de carteira MetaMask para autenticação. Permite aos usuários conectar sua carteira Web3, ver candidatos, votar e verificar resultados em tempo real. Usa ethers.js para comunicar-se com o contrato implantado na blockchain. Fornece visualização transparente do estado de votação e resultados armazenados na cadeia."
+          }
+        }
+      },
+      "evacuacion": {
+        "title": "Simulação de Evacuação Multi-Agente",
+        "description": "Sistema de simulação baseado em agentes para modelar processos de evacuação em cenários de emergência. Usa agentes autônomos para representar indivíduos evacuando de prédios ou espaços fechados, estudando comportamento coletivo sob estresse, congestionamento e pânico. A simulação avalia tempos de evacuação, rotas de escape e protocolos de segurança através de interações complexas entre agentes e seu ambiente. Demonstra sistemas multi-agente (MAS) aplicados a cenários de segurança do mundo real, apresentando diferentes papéis de agentes (evacuados e membros de brigada), algoritmos de tomada de decisão e regras comportamentais que geram fenômenos coletivos emergentes como gargalos e dinâmicas de multidão.",
+        "versions": {
+          "core": {
+            "name": "Motor de Simulação Central",
+            "description": "Framework de simulação multi-agente baseado em Python implementando comportamento de agente autônomo para cenários de evacuação. Apresenta percepção do ambiente pelos agentes, tomada de decisão baseada em regras comportamentais e interações agente-ambiente-agente. O loop de simulação principal em main.py orquestra criação de agentes, configuração de ambiente e ciclos de execução. Suporta diferentes tipos de agentes incluindo evacuados e membros de brigada com padrões comportamentais e objetivos distintos."
+          },
+          "models": {
+            "name": "Modelos de Agente e Ambiente",
+            "description": "Arquitetura modular definindo agentes, ambiente e regras de interação. A pasta model/ contém classes para tipos de agentes, representação espacial do ambiente, algoritmos de movimento e lógica de rotas de evacuação. Esqueleto.py fornece modelos base para classes de agentes e herança de funcionalidade comum. Implementa regras para dinâmicas de multidão, formação de gargalos e comportamentos de resposta a emergências. Permite experimentação com diferentes estratégias de evacuação e protocolos de segurança."
+          }
+        }
+      },
+      "fastfoodie": {
+        "title": "FASTFOODIE",
+        "description": "Projeto backend progressivo focado no desenvolvimento de aplicação web para gestão de pedidos de comida rápida, construído seguindo princípios de arquitetura distribuída e melhores práticas de engenharia de software. Através dos repositórios, você pode ver a evolução do sistema de uma base funcional simples para uma solução mais estruturada e escalável alinhada com padrões modernos.",
+        "versions": {
+          "phase1": {
+            "name": "Fase 1: Servidor REST",
+            "description": "Fundação funcional do sistema. Implementação de servidor web capaz de lidar com requisições HTTP e expor serviços REST. Estabelece a base para gestão de recursos de pedidos."
+          },
+          "phase2": {
+            "name": "Fase 2: Arquitetura MVC",
+            "description": "Evolução para uma solução mais estruturada. Implementa desacoplamento de responsabilidades com controladores, serviços e modelos. Tratamento adequado de rotas e comunicação cliente-servidor."
+          },
+          "phase3": {
+            "name": "Fase 3: Autenticação e Segurança",
+            "description": "Solução robusta e escalável. Integração de gestão de sessão, autenticação de usuário e controle de acesso. Aplicação de padrões modernos de segurança web."
+          }
+        }
+      },
+      "cesarShop": {
+        "title": "Cesar's Shop",
+        "description": "Projeto de framework progressivo que demonstra a evolução de um servidor web leve do tratamento HTTP básico para um framework IoC completo inspirado no Spring Boot. Construiu uma loja online totalmente funcional para gestão de produtos, mostrando evolução de arquitetura do lado do servidor, configuração de endpoints baseada em anotações e implantação em nuvem. O projeto progride através de quatro fases: serviço de arquivos estáticos, serviços REST com lambdas, framework IoC com anotações (@RestController, @GetMapping, @PostMapping, @DeleteMapping), e finalmente conteinerização com Docker e implantação em nuvem AWS.",
+        "versions": {
+          "phase3": {
+            "name": "Fase 3: Framework IoC com Anotações",
+            "description": "Transformação em framework IoC inspirado no Spring Boot. Suporta POJOs com anotações @RestController, definições de endpoints com @GetMapping, @PostMapping, @DeleteMapping. Gerencia parâmetros de consulta com @RequestParam e recepção de dados JSON com @RequestBody. Inclui UI de loja online totalmente funcional para gestão de produtos (criar, listar, excluir produtos). Apresenta testes JUnit automatizados validando endpoints REST e funcionalidade do framework."
+          },
+          "phase4": {
+            "name": "Fase 4: Docker e Implantação em Nuvem AWS",
+            "description": "Evolução para solução pronta para nuvem. Adiciona configuração de conteinerização Docker para todo o projeto. Implanta a aplicação em infraestrutura de nuvem AWS. Permite construir aplicações web completas usando apenas POJOs com anotações, sem configuração manual de rotas ou serviços. Inclui evidência em vídeo de implantação em nuvem bem-sucedida e acesso à aplicação ao vivo."
+          }
+        }
+      },
+      "cesarflix": {
+        "title": "CesarFlix",
+        "description": "Clone de plataforma de streaming inspirado no Netflix construído com React como Aplicação de Página Única (SPA). Projetado como projeto de aprendizado abrangente para dominar fundamentos de React incluindo arquitetura de componentes, roteamento, gestão de estado e consumo de API. Apresenta interface estilo catálogo para navegar filmes e séries, visualizações detalhadas e navegação similar a plataformas de streaming modernas. Usa json-server para simular backend API REST, permitindo busca de dados realista sem implementação completa de backend. Serve como excelente projeto de prática para entender padrões de desenvolvimento frontend do mundo real, design de componentes reutilizáveis e tratamento de requisições HTTP em aplicações React.",
+        "versions": {
+          "frontend": {
+            "name": "Aplicação Frontend (React SPA)",
+            "description": "Aplicação de página única baseada em React apresentando padrões UI/UX de plataforma de streaming. Implementa arquitetura baseada em componentes com estrutura de pastas public/ e src/ típica de projetos create-react-app ou Vite. Recursos incluem: exibição de catálogo de conteúdo com layouts de cartões, navegação entre seções (início, detalhes de conteúdo), roteamento para diferentes visualizações, gestão de estado com hooks React e requisições HTTP usando fetch/axios. Demonstra padrões práticos de React para construir aplicações escaláveis incluindo componentes reutilizáveis, composição de componentes e estilização JavaScript/CSS moderna."
+          },
+          "backend": {
+            "name": "Backend Mock (json-server)",
+            "description": "API REST simulada usando json-server com arquivo db.json contendo dados mock para filmes, séries e conteúdo de streaming. Executa localmente na porta 5000 (npx json-server db.json --port 5000) para fornecer endpoints API realistas para o frontend. Permite desenvolvimento e teste de padrões de consumo de API sem implementar backend completo. Demonstra como estruturar dados para serviços RESTful e praticar busca assíncrona de dados em aplicações frontend. Perfeito para aprender integração de API antes de passar para backends de produção."
+          }
+        }
+      },
+      "secureText": {
+        "title": "SecureText",
+        "description": "Aplicação web para criptografar e descriptografar texto usando regras de cifra de substituição baseadas em vogais. Permite aos usuários trocar mensagens secretas através de sistema específico de conversão de caracteres onde cada vogal é substituída por uma string de caracteres única. Apresenta detecção inteligente de descriptografia que só habilita o botão de descriptografar quando padrões criptografados são identificados no texto de entrada. Construída como demonstração prática de algoritmos de manipulação de strings e conceitos básicos de criptografia, com integração de área de transferência para compartilhamento fácil de mensagens.",
+        "versions": {
+          "main": {
+            "name": "Aplicação Principal",
+            "description": "Aplicação web de página única implementando algoritmo de criptografia/descriptografia baseado em vogais. Recursos incluem: transformação bidirecional de texto (criptografar/descriptografar), ativação inteligente do botão de descriptografia baseada em detecção de padrões, funcionalidade de cópia para área de transferência emulando comportamento Ctrl+C e processamento de texto em tempo real. Regras de criptografia: 'e' → 'enter', 'i' → 'imes', 'a' → 'ai', 'o' → 'ober', 'u' → 'ufat'. Exemplo: 'gato' torna-se 'gaitober'. Desenvolvida usando metodologia ágil com gestão de quadro Trello (Pronto para Iniciar, Em Desenvolvimento, Pausado, Concluído). UI limpa e responsiva com lógica HTML/CSS e JavaScript vanilla para manipulação de strings."
+          }
+        }
+      }
+    }
   },
   "contact": {
     "title": "Contato",
